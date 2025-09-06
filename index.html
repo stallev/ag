@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Путь к Христу — Духовное путешествие</title>
+    <meta name="description" content="Сайт о христианстве, вере и духовном развитии для всех возрастных групп. Найти церковь, начать духовный путь, получить ответы на вопросы о вере.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-link">Перейти к основному содержимому</a>
+
+    <header class="header">
+        <div class="header__container">
+            <nav class="header__nav" aria-label="Основная навигация">
+                <button class="header__mobile-menu-btn" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="material-icons">menu</span>
+                </button>
+                <div class="header__menu-overlay" id="menu-overlay"></div>
+                <ul class="header__menu" id="mobile-menu">
+                    <button class="header__menu-close" aria-label="Закрыть меню" type="button">
+                        <span class="material-icons">close</span>
+                    </button>
+                    <li><a href="index.html" class="header__menu-link">Главная</a></li>
+                    <li><a href="about-christ.html" class="header__menu-link">О Христе</a></li>
+                    <li class="header__menu-item header__menu-item--has-submenu">
+                        <button class="header__menu-link header__menu-link--submenu" type="button" aria-expanded="false" aria-controls="gates-submenu">
+                            Возрастные группы
+                            <span class="material-icons header__menu-arrow" aria-hidden="true">expand_more</span>
+                        </button>
+                        <ul class="header__submenu" id="gates-submenu">
+                            <li><a href="gates/children.html" class="header__submenu-link">Дети (5-11 лет)</a></li>
+                            <li><a href="gates/teenagers.html" class="header__submenu-link">Подростки (12-17 лет)</a></li>
+                            <li><a href="gates/youth.html" class="header__submenu-link">Молодежь (18-30 лет)</a></li>
+                            <li><a href="gates/families.html" class="header__submenu-link">Семьи</a></li>
+                            <li><a href="gates/seniors.html" class="header__submenu-link">Старшее поколение (50+)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="find-church.html" class="header__menu-link">Найти церковь</a></li>
+                    <li class="header__menu-item header__menu-item--has-submenu">
+                        <button class="header__menu-link header__menu-link--submenu" type="button" aria-expanded="false" aria-controls="media-submenu">
+                            Медиа
+                            <span class="material-icons header__menu-arrow" aria-hidden="true">expand_more</span>
+                        </button>
+                        <ul class="header__submenu" id="media-submenu">
+                            <li><a href="media.html" class="header__submenu-link">Все медиа</a></li>
+                            <li><a href="content-pages/video/videos.html" class="header__submenu-link">Видео</a></li>
+                            <li><a href="content-pages/audio/audios.html" class="header__submenu-link">Аудио</a></li>
+                            <li><a href="content-pages/blog/blog.html" class="header__submenu-link">Статьи</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="questions-answers.html" class="header__menu-link">Вопросы и ответы</a></li>
+                    <li><a href="start-journey.html" class="header__menu-link">Начать путь</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <section class="hero">
+            <div class="hero__container">
+                <h1 class="hero__title">Путь к Христу</h1>
+                <p class="hero__subtitle">Ваше духовное путешествие начинается здесь</p>
+                <div class="hero__cta">
+                    <a href="find-church.html" class="hero__button hero__button--primary">Найти церковь рядом</a>
+                    <a href="start-journey.html" class="hero__button hero__button--secondary">Начать путь с Христом</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="gates" id="gates">
+            <div class="gates__container">
+                <h2 class="gates__title">Выберите свой путь</h2>
+                <div class="gates__grid">
+                    <a href="gates/children.html" class="gates__card gates__card--children" tabindex="0" role="button" aria-label="Перейти к разделу для детей 5-11 лет">
+                        <span class="material-icons gates__icon" aria-hidden="true">child_care</span>
+                        <h3 class="gates__card-title">Дети (5-11 лет)</h3>
+                        <p class="gates__card-description">Приключения с Библией и веселые истории о Христе</p>
+                    </a>
+                    <a href="gates/teenagers.html" class="gates__card gates__card--teenagers" tabindex="0" role="button" aria-label="Перейти к разделу для подростков 12-17 лет">
+                        <span class="material-icons gates__icon" aria-hidden="true">videogame_asset</span>
+                        <h3 class="gates__card-title">Подростки (12-17 лет)</h3>
+                        <p class="gates__card-description">Актуальные темы и молодежные программы</p>
+                    </a>
+                    <a href="gates/youth.html" class="gates__card gates__card--youth" tabindex="0" role="button" aria-label="Перейти к разделу для молодежи 18-30 лет">
+                        <span class="material-icons gates__icon" aria-hidden="true">school</span>
+                        <h3 class="gates__card-title">Молодежь (18-30 лет)</h3>
+                        <p class="gates__card-description">Вера в карьере, отношениях и современном мире</p>
+                    </a>
+                    <a href="gates/families.html" class="gates__card gates__card--families" tabindex="0" role="button" aria-label="Перейти к разделу для семей">
+                        <span class="material-icons gates__icon" aria-hidden="true">family_restroom</span>
+                        <h3 class="gates__card-title">Семьи</h3>
+                        <p class="gates__card-description">Христианские ценности в семье и воспитании детей</p>
+                    </a>
+                    <a href="gates/seniors.html" class="gates__card gates__card--seniors" tabindex="0" role="button" aria-label="Перейти к разделу для старшего поколения 50+">
+                        <span class="material-icons gates__icon" aria-hidden="true">elderly</span>
+                        <h3 class="gates__card-title">Старшее поколение (50+)</h3>
+                        <p class="gates__card-description">Мудрость, опыт и духовное наставничество</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-christianity" id="about-christianity">
+            <div class="about-christianity__container">
+                <h2 class="about-christianity__title">Что такое христианство за 2 минуты</h2>
+                <div class="about-christianity__video">
+                    <iframe width="560" height="315" 
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                            title="Что такое христианство - краткое объяснение" 
+                            frameborder="0" 
+                            allowfullscreen
+                            loading="lazy">
+                    </iframe>
+                </div>
+                <p class="about-christianity__description">
+                    Христианство — это вера в Иисуса Христа как Сына Божьего и Спасителя мира. 
+                    Это путь любви, прощения и надежды, который может изменить вашу жизнь.
+                </p>
+            </div>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+            <div class="testimonials__container">
+                <h2 class="testimonials__title">Истории изменённых жизней</h2>
+                <div class="testimonials__carousel">
+                    <div class="testimonial testimonial--active">
+                        <blockquote class="testimonial__quote">
+                            "Моя жизнь полностью изменилась, когда я встретил Христа. Я обрел мир, радость и цель в жизни."
+                        </blockquote>
+                        <div class="testimonial__author">
+                            <div class="testimonial__author-name">Иван, 28 лет</div>
+                            <div class="testimonial__author-location">Москва</div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <blockquote class="testimonial__quote">
+                            "Христианство дало мне силы преодолеть трудности и найти смысл в страданиях."
+                        </blockquote>
+                        <div class="testimonial__author">
+                            <div class="testimonial__author-name">Мария, 35 лет</div>
+                            <div class="testimonial__author-location">Санкт-Петербург</div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <blockquote class="testimonial__quote">
+                            "В церкви я нашел настоящую семью и друзей, которые поддерживают меня в любой ситуации."
+                        </blockquote>
+                        <div class="testimonial__author">
+                            <div class="testimonial__author-name">Алексей, 42 года</div>
+                            <div class="testimonial__author-location">Екатеринбург</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonials__controls">
+                    <button class="testimonials__prev" aria-label="Предыдущий отзыв">
+                        <span class="material-icons">chevron_left</span>
+                    </button>
+                    <button class="testimonials__next" aria-label="Следующий отзыв">
+                        <span class="material-icons">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="church-map" id="church-map">
+            <div class="church-map__container">
+                <h2 class="church-map__title">Церкви поблизости</h2>
+                <div class="church-map__description">
+                    <p>Найдите ближайшую церковь и присоединитесь к христианскому сообществу</p>
+                </div>
+                <div id="map" class="church-map__google-map" role="img" aria-label="Интерактивная карта с расположением церквей">
+                    <!-- Здесь будет Google Maps -->
+                    <div class="church-map__placeholder">
+                        <span class="material-icons" aria-hidden="true">location_on</span>
+                        <p>Карта церквей</p>
+                        <p>Нажмите для поиска ближайших церквей</p>
+                    </div>
+                </div>
+                <div class="church-map__features">
+                    <div class="church-map__feature">
+                        <span class="material-icons" aria-hidden="true">my_location</span>
+                        <span>Автоматическое определение местоположения</span>
+                    </div>
+                    <div class="church-map__feature">
+                        <span class="material-icons" aria-hidden="true">directions</span>
+                        <span>Построение маршрута</span>
+                    </div>
+                    <div class="church-map__feature">
+                        <span class="material-icons" aria-hidden="true">schedule</span>
+                        <span>Расписание служб</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="first-steps" id="first-steps">
+            <div class="first-steps__container">
+                <h2 class="first-steps__title">Первые шаги</h2>
+                <p class="first-steps__subtitle">Начните свой духовный путь с этими простыми шагами</p>
+                <div class="first-steps__guide">
+                    <div class="first-steps__item">
+                        <div class="first-steps__number">1</div>
+                        <span class="material-icons first-steps__icon" aria-hidden="true">book</span>
+                        <h3 class="first-steps__item-title">Узнать о Христе</h3>
+                        <p class="first-steps__item-description">Изучите основы христианской веры</p>
+                    </div>
+                    <div class="first-steps__item">
+                        <div class="first-steps__number">2</div>
+                        <span class="material-icons first-steps__icon" aria-hidden="true">menu_book</span>
+                        <h3 class="first-steps__item-title">Читать Библию</h3>
+                        <p class="first-steps__item-description">Начните с Евангелия от Иоанна</p>
+                    </div>
+                    <div class="first-steps__item">
+                        <div class="first-steps__number">3</div>
+                        <span class="material-icons first-steps__icon" aria-hidden="true">self_improvement</span>
+                        <h3 class="first-steps__item-title">Молиться</h3>
+                        <p class="first-steps__item-description">Разговаривайте с Богом каждый день</p>
+                    </div>
+                    <div class="first-steps__item">
+                        <div class="first-steps__number">4</div>
+                        <span class="material-icons first-steps__icon" aria-hidden="true">church</span>
+                        <h3 class="first-steps__item-title">Найти церковь</h3>
+                        <p class="first-steps__item-description">Присоединитесь к христианскому сообществу</p>
+                    </div>
+                </div>
+                <a href="start-journey.html" class="first-steps__cta">Начать путь</a>
+            </div>
+        </section>
+
+        <section class="prayer-request" id="prayer-request">
+            <div class="prayer-request__container">
+                <h2 class="prayer-request__title">Просьба о молитве</h2>
+                <p class="prayer-request__subtitle">Поделитесь своей нуждой, и мы помолимся за вас</p>
+                <form class="prayer-request__form" id="prayerRequestForm">
+                    <div class="prayer-request__form-group">
+                        <label for="prayerName" class="prayer-request__label">Ваше имя</label>
+                        <input type="text" 
+                               id="prayerName" 
+                               name="name" 
+                               class="prayer-request__input" 
+                               required
+                               placeholder="Введите ваше имя">
+                    </div>
+
+                    <div class="prayer-request__form-group">
+                        <label for="prayerText" class="prayer-request__label">Ваша молитвенная нужда</label>
+                        <textarea id="prayerText" 
+                                  name="prayer" 
+                                  class="prayer-request__textarea" 
+                                  required
+                                  placeholder="Опишите, за что вы просите молиться"
+                                  rows="4"></textarea>
+                    </div>
+
+                    <div class="prayer-request__form-group prayer-request__form-group--checkbox">
+                        <input type="checkbox" 
+                               class="prayer-request__checkbox" 
+                               id="prayerPrivacy" 
+                               name="privacy" 
+                               required>
+                        <label class="prayer-request__label prayer-request__label--checkbox" for="prayerPrivacy">
+                            Я согласен на обработку персональных данных
+                        </label>
+                    </div>
+
+                    <button type="submit" class="prayer-request__submit">Отправить просьбу</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__main">
+                <div class="footer__info">
+                    <h3 class="footer__title">Путь к Христу</h3>
+                    <p class="footer__description">
+                        Сайт о христианстве, вере и духовном развитии для всех возрастных групп. 
+                        Помогаем найти церковь и начать духовный путь.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 22 22">
+                                <path d="M15.929 0H6.07A6.078 6.078 0 0 0 0 6.071v9.858A6.078 6.078 0 0 0 6.071 22h9.858A6.078 6.078 0 0 0 22 15.929V6.07A6.078 6.078 0 0 0 15.929 0Zm4.12 15.929a4.124 4.124 0 0 1-4.12 4.12H6.07a4.124 4.124 0 0 1-4.119-4.12V6.07a4.124 4.124 0 0 1 4.12-4.119h9.857a4.124 4.124 0 0 1 4.12 4.12v9.857Z" fill="currentColor"/>
+                                <path d="M11.001 5.331a5.675 5.675 0 0 0-5.669 5.67 5.675 5.675 0 0 0 5.67 5.668A5.675 5.675 0 0 0 16.67 11 5.675 5.675 0 0 0 11 5.331Zm0 9.386A3.721 3.721 0 0 1 7.284 11a3.721 3.721 0 0 1 3.717-3.717A3.721 3.721 0 0 1 14.718 11a3.721 3.721 0 0 1-3.717 3.717ZM16.907 3.676c-.376 0-.746.152-1.011.419-.267.265-.42.635-.42 1.012s.153.746.42 1.013c.265.265.635.419 1.01.419.378 0 .746-.154 1.013-.42.267-.266.42-.636.42-1.012 0-.377-.153-.747-.42-1.012a1.438 1.438 0 0 0-1.012-.419Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 22 22">
+                                <path d="M22 11C22 4.925 17.075 0 11 0S0 4.925 0 11c0 5.49 4.024 10.04 9.281 10.865v-7.68H6.488V11h2.793V8.577c0-2.755 1.64-4.277 4.15-4.277 1.202 0 2.459.215 2.459.215v2.704h-1.386c-1.365 0-1.792.848-1.792 1.717V11h3.045l-.487 3.185h-2.558v7.68C17.976 21.04 22 16.49 22 11Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 22 22">
+                                <path d="M21.582 6.186a2.506 2.506 0 0 0-1.768-1.768C18.254 4 11 4 11 4s-7.254 0-8.814.418A2.506 2.506 0 0 0 .418 6.186C0 7.746 0 11 0 11s0 3.254.418 4.814a2.506 2.506 0 0 0 1.768 1.768C3.746 18 11 18 11 18s7.254 0 8.814-.418a2.506 2.506 0 0 0 1.768-1.768C22 14.254 22 11 22 11s0-3.254-.418-4.814ZM8.75 14.25V7.75l5.75 3.25-5.75 3.25Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer__nav">
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">Навигация</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="index.html" class="footer__nav-link">Главная</a></li>
+                            <li><a href="about-christ.html" class="footer__nav-link">О Христе</a></li>
+                            <li><a href="find-church.html" class="footer__nav-link">Найти церковь</a></li>
+                            <li><a href="media.html" class="footer__nav-link">Медиа</a></li>
+                            <li><a href="questions-answers.html" class="footer__nav-link">Вопросы и ответы</a></li>
+                            <li><a href="start-journey.html" class="footer__nav-link">Начать путь</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">Возрастные группы</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="gates/children.html" class="footer__nav-link">Дети (5-11 лет)</a></li>
+                            <li><a href="gates/teenagers.html" class="footer__nav-link">Подростки (12-17 лет)</a></li>
+                            <li><a href="gates/youth.html" class="footer__nav-link">Молодежь (18-30 лет)</a></li>
+                            <li><a href="gates/families.html" class="footer__nav-link">Семьи</a></li>
+                            <li><a href="gates/seniors.html" class="footer__nav-link">Старшее поколение (50+)</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">Контакты</h4>
+                        <ul class="footer__nav-list">
+                            <li>
+                                <a href="mailto:info@put-k-hristu.ru" class="footer__nav-link footer__nav-link--contact">
+                                    <span class="material-icons footer__nav-icon" aria-hidden="true">email</span>
+                                    info@put-k-hristu.ru
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+74951234567" class="footer__nav-link footer__nav-link--contact">
+                                    <span class="material-icons footer__nav-icon" aria-hidden="true">phone</span>
+                                    +7 (495) 123-45-67
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__copyright">
+                    © 2024 Путь к Христу. Все права защищены.
+                </div>
+                <div class="footer__links">
+                    <a href="privacy-policy.html" class="footer__link">Политика конфиденциальности</a>
+                    <a href="terms-of-use.html" class="footer__link">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

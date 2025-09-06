@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Найти церковь — Ближайшие дома молитвы | Путь к Христу</title>
+    <meta name="description" content="Найдите ближайшую церковь или дом молитвы в вашем городе. Интерактивная карта с расписанием служб, контактами и программами для всех возрастных групп.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-link">Перейти к основному содержимому</a>
+
+    <header class="header">
+        <div class="header__container">
+            <nav class="header__nav" aria-label="Основная навигация">
+                <button class="header__mobile-menu-btn" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="material-icons">menu</span>
+                </button>
+                <div class="header__menu-overlay" id="menu-overlay"></div>
+                <ul class="header__menu" id="mobile-menu">
+                    <button class="header__menu-close" aria-label="Закрыть меню" type="button">
+                        <span class="material-icons">close</span>
+                    </button>
+                    <li><a href="index.html" class="header__menu-link">Главная</a></li>
+                    <li><a href="about-christ.html" class="header__menu-link">О Христе</a></li>
+                    <li class="header__menu-item header__menu-item--has-submenu">
+                        <button class="header__menu-link header__menu-link--submenu" type="button" aria-expanded="false" aria-controls="gates-submenu">
+                            Возрастные группы
+                            <span class="material-icons header__menu-arrow" aria-hidden="true">expand_more</span>
+                        </button>
+                        <ul class="header__submenu" id="gates-submenu">
+                            <li><a href="gates/children.html" class="header__submenu-link">Дети (5-11 лет)</a></li>
+                            <li><a href="gates/teenagers.html" class="header__submenu-link">Подростки (12-17 лет)</a></li>
+                            <li><a href="gates/youth.html" class="header__submenu-link">Молодежь (18-30 лет)</a></li>
+                            <li><a href="gates/families.html" class="header__submenu-link">Семьи</a></li>
+                            <li><a href="gates/seniors.html" class="header__submenu-link">Старшее поколение (50+)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="find-church.html" class="header__menu-link header__menu-link--active">Найти церковь</a></li>
+                    <li class="header__menu-item header__menu-item--has-submenu">
+                        <button class="header__menu-link header__menu-link--submenu" type="button" aria-expanded="false" aria-controls="media-submenu">
+                            Медиа
+                            <span class="material-icons header__menu-arrow" aria-hidden="true">expand_more</span>
+                        </button>
+                        <ul class="header__submenu" id="media-submenu">
+                            <li><a href="media.html" class="header__submenu-link">Все медиа</a></li>
+                            <li><a href="content-pages/video/videos.html" class="header__submenu-link">Видео</a></li>
+                            <li><a href="content-pages/audio/audios.html" class="header__submenu-link">Аудио</a></li>
+                            <li><a href="content-pages/blog/blog.html" class="header__submenu-link">Статьи</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="questions-answers.html" class="header__menu-link">Вопросы и ответы</a></li>
+                    <li><a href="start-journey.html" class="header__menu-link">Начать путь</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <section class="hero">
+            <div class="hero__container">
+                <h1 class="hero__title">Найти церковь</h1>
+                <p class="hero__subtitle">Найдите ближайший дом молитвы и присоединитесь к христианскому сообществу</p>
+                <div class="hero__cta">
+                    <a href="#church-map" class="hero__button hero__button--primary">Посмотреть на карте</a>
+                    <a href="#church-list" class="hero__button hero__button--secondary">Список церквей</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="church-search" id="church-search">
+            <div class="church-search__container">
+                <h2 class="church-search__title">Поиск церкви</h2>
+                <div class="church-search__form">
+                    <div class="church-search__input-group">
+                        <label for="locationInput" class="church-search__label">Ваше местоположение</label>
+                        <input type="text" 
+                               id="locationInput" 
+                               class="church-search__input" 
+                               placeholder="Введите город или адрес"
+                               autocomplete="address-level2">
+                        <button class="church-search__location-btn" type="button" aria-label="Определить местоположение">
+                            <span class="material-icons">my_location</span>
+                        </button>
+                    </div>
+                    
+                    <div class="church-search__filters">
+                        <div class="church-search__filter-group">
+                            <label for="denominationFilter" class="church-search__filter-label">Деноминация</label>
+                            <select id="denominationFilter" class="church-search__select">
+                                <option value="">Все деноминации</option>
+                                <option value="baptist">Баптисты</option>
+                                <option value="orthodox">Православные</option>
+                                <option value="catholic">Католики</option>
+                                <option value="pentecostal">Пятидесятники</option>
+                                <option value="lutheran">Лютеране</option>
+                            </select>
+                        </div>
+                        
+                        <div class="church-search__filter-group">
+                            <label for="languageFilter" class="church-search__filter-label">Язык службы</label>
+                            <select id="languageFilter" class="church-search__select">
+                                <option value="">Любой язык</option>
+                                <option value="russian">Русский</option>
+                                <option value="english">Английский</option>
+                                <option value="ukrainian">Украинский</option>
+                                <option value="armenian">Армянский</option>
+                            </select>
+                        </div>
+                        
+                        <div class="church-search__filter-group">
+                            <label for="programsFilter" class="church-search__filter-label">Программы</label>
+                            <select id="programsFilter" class="church-search__select">
+                                <option value="">Все программы</option>
+                                <option value="children">Детские программы</option>
+                                <option value="youth">Молодежные программы</option>
+                                <option value="family">Семейные программы</option>
+                                <option value="seniors">Программы для пожилых</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button class="church-search__submit" type="button">Найти церкви</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="church-map" id="church-map">
+            <div class="church-map__container">
+                <h2 class="church-map__title">Карта церквей</h2>
+                <div class="church-map__wrapper">
+                    <div class="church-map__map" id="churchMap">
+                        <!-- Здесь будет встроена карта Google Maps -->
+                        <div class="church-map__placeholder">
+                            <div class="church-map__placeholder-content">
+                                <span class="material-icons">map</span>
+                                <h3>Интерактивная карта</h3>
+                                <p>Карта с маркерами церквей будет загружена здесь</p>
+                                <button class="church-map__load-btn" type="button">Загрузить карту</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="church-map__sidebar">
+                        <div class="church-map__results">
+                            <h3 class="church-map__results-title">Найденные церкви</h3>
+                            <div class="church-map__results-list" id="churchResultsList">
+                                <!-- Результаты поиска будут загружены здесь -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="church-list" id="church-list">
+            <div class="church-list__container">
+                <h2 class="church-list__title">Список церквей</h2>
+                <div class="church-list__grid">
+                    <article class="church-card">
+                        <div class="church-card__image">
+                            <img src="https://placehold.co/400x250/8B0000/FFFFFF?text=Церковь+ЕХБ" alt="Здание церкви ЕХБ 'Благодать'">
+                        </div>
+                        <div class="church-card__content">
+                            <h3 class="church-card__title">Церковь ЕХБ "Благодать"</h3>
+                            <div class="church-card__info">
+                                <div class="church-card__info-item">
+                                    <span class="material-icons">location_on</span>
+                                    <span>ул. Пушкина, 10, Москва</span>
+                                </div>
+                                <div class="church-card__info-item">
+                                    <span class="material-icons">schedule</span>
+                                    <span>Воскресенье: 10:00, 18:00</span>
+                                </div>
+                                <div class="church-card__info-item">
+                                    <span class="material-icons">phone</span>
+                                    <span>+7 (495) 123-45-67</span>
+                                </div>
+                            </div>
+                            <div class="church-card__programs">
+                                <h4 class="church-card__programs-title">Программы:</h4>
+                                <div class="church-card__programs-list">
+                                    <span class="church-card__program">Детская воскресная школа</span>
+                                    <span class="church-card__program">Молодежные встречи</span>
+                                    <span class="church-card__program">Семейные программы</span>
+                                </div>
+                            </div>
+                            <div class="church-card__actions">
+                                <button class="church-card__btn church-card__btn--primary" type="button">Подробнее</button>
+                                <button class="church-card__btn church-card__btn--secondary" type="button">Построить маршрут</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="church-card">
+                        <div class="church-card__image">
+                            <img src="https://placehold.co/400x250/8B0000/FFFFFF?text=Церковь+ЕХБ" alt="Здание церкви ЕХБ 'Мир'">
+                        </div>
+                        <div class="church-card__content">
+                            <h3 class="church-card__title">Церковь ЕХБ "Мир"</h3>
+                            <div class="church-card__info">
+                                <div class="church-card__info-item">
+                                    <span class="material-icons">location_on</span>
+                                    <span>пр. Мира, 25, Москва</span>
+                                </div>
+                                <div class="church-card__info-item">
+                                    <span class="material-icons">schedule</span>
+                                    <span>Воскресенье: 9:30, 17:00</span>
+                                </div>
+                                <div class="church-card__info-item">
+                                    <span class="material-icons">phone</span>
+                                    <span>+7 (495) 234-56-78</span>
+                                </div>
+                            </div>
+                            <div class="church-card__programs">
+                                <h4 class="church-card__programs-title">Программы:</h4>
+                                <div class="church-card__programs-list">
+                                    <span class="church-card__program">Детские программы</span>
+                                    <span class="church-card__program">Молодежное служение</span>
+                                    <span class="church-card__program">Программы для пожилых</span>
+                                </div>
+                            </div>
+                            <div class="church-card__actions">
+                                <button class="church-card__btn church-card__btn--primary" type="button">Подробнее</button>
+                                <button class="church-card__btn church-card__btn--secondary" type="button">Построить маршрут</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="church-card">
+                        <div class="church-card__image">
+                            <img src="https://placehold.co/400x250/8B0000/FFFFFF?text=Церковь+ЕХБ" alt="Здание церкви ЕХБ 'Надежда'">
+                        </div>
+                        <div class="church-card__content">
+                            <h3 class="church-card__title">Церковь ЕХБ "Надежда"</h3>
+                            <div class="church-card__info">
+                                <div class="church-card__info-item">
+                                    <span class="material-icons">location_on</span>
+                                    <span>ул. Ленина, 5, Москва</span>
+                                </div>
+                                <div class="church-card__info-item">
+                                    <span class="material-icons">schedule</span>
+                                    <span>Воскресенье: 11:00, 19:00</span>
+                                </div>
+                                <div class="church-card__info-item">
+                                    <span class="material-icons">phone</span>
+                                    <span>+7 (495) 345-67-89</span>
+                                </div>
+                            </div>
+                            <div class="church-card__programs">
+                                <h4 class="church-card__programs-title">Программы:</h4>
+                                <div class="church-card__programs-list">
+                                    <span class="church-card__program">Воскресная школа</span>
+                                    <span class="church-card__program">Молодежные группы</span>
+                                    <span class="church-card__program">Семейные встречи</span>
+                                </div>
+                            </div>
+                            <div class="church-card__actions">
+                                <button class="church-card__btn church-card__btn--primary" type="button">Подробнее</button>
+                                <button class="church-card__btn church-card__btn--secondary" type="button">Построить маршрут</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="church-card">
+                        <div class="church-card__image">
+                            <img src="https://placehold.co/400x250/8B0000/FFFFFF?text=Церковь+ЕХБ" alt="Здание церкви ЕХБ 'Любовь'">
+                        </div>
+                        <div class="church-card__content">
+                            <h3 class="church-card__title">Церковь ЕХБ "Любовь"</h3>
+                            <div class="church-card__info">
+                                <div class="church-card__info-item">
+                                    <span class="material-icons">location_on</span>
+                                    <span>ул. Гагарина, 15, Москва</span>
+                                </div>
+                                <div class="church-card__info-item">
+                                    <span class="material-icons">schedule</span>
+                                    <span>Воскресенье: 10:30, 18:30</span>
+                                </div>
+                                <div class="church-card__info-item">
+                                    <span class="material-icons">phone</span>
+                                    <span>+7 (495) 456-78-90</span>
+                                </div>
+                            </div>
+                            <div class="church-card__programs">
+                                <h4 class="church-card__programs-title">Программы:</h4>
+                                <div class="church-card__programs-list">
+                                    <span class="church-card__program">Детские программы</span>
+                                    <span class="church-card__program">Молодежное служение</span>
+                                    <span class="church-card__program">Программы для семей</span>
+                                </div>
+                            </div>
+                            <div class="church-card__actions">
+                                <button class="church-card__btn church-card__btn--primary" type="button">Подробнее</button>
+                                <button class="church-card__btn church-card__btn--secondary" type="button">Построить маршрут</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="church-features" id="church-features">
+            <div class="church-features__container">
+                <h2 class="church-features__title">Почему стоит посетить церковь?</h2>
+                <div class="church-features__grid">
+                    <div class="church-feature">
+                        <div class="church-feature__icon">
+                            <span class="material-icons">groups</span>
+                        </div>
+                        <h3 class="church-feature__title">Христианское сообщество</h3>
+                        <p class="church-feature__description">Присоединитесь к дружелюбному сообществу верующих, которые поддержат вас в духовном пути.</p>
+                    </div>
+                    
+                    <div class="church-feature">
+                        <div class="church-feature__icon">
+                            <span class="material-icons">menu_book</span>
+                        </div>
+                        <h3 class="church-feature__title">Изучение Библии</h3>
+                        <p class="church-feature__description">Углубите свои знания Священного Писания через проповеди и библейские занятия.</p>
+                    </div>
+                    
+                    <div class="church-feature">
+                        <div class="church-feature__icon">
+                            <span class="material-icons">self_improvement</span>
+                        </div>
+                        <h3 class="church-feature__title">Духовный рост</h3>
+                        <p class="church-feature__description">Развивайте свою веру и укрепляйте отношения с Богом в атмосфере поклонения.</p>
+                    </div>
+                    
+                    <div class="church-feature">
+                        <div class="church-feature__icon">
+                            <span class="material-icons">favorite</span>
+                        </div>
+                        <h3 class="church-feature__title">Служение другим</h3>
+                        <p class="church-feature__description">Найдите возможности служить ближним и участвовать в миссионерской работе.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="prayer-request" id="prayer-request">
+            <div class="prayer-request__container">
+                <h2 class="prayer-request__title">Просьба о молитве</h2>
+                <p class="prayer-request__subtitle">Поделитесь своей нуждой, и мы помолимся за вас</p>
+                <form class="prayer-request__form" id="prayerRequestForm">
+                    <div class="prayer-request__form-group">
+                        <label for="prayerName" class="prayer-request__label">Ваше имя</label>
+                        <input type="text" 
+                               id="prayerName" 
+                               name="name" 
+                               class="prayer-request__input" 
+                               required
+                               placeholder="Введите ваше имя">
+                    </div>
+
+                    <div class="prayer-request__form-group">
+                        <label for="prayerText" class="prayer-request__label">Ваша молитвенная нужда</label>
+                        <textarea id="prayerText" 
+                                  name="prayer" 
+                                  class="prayer-request__textarea" 
+                                  required
+                                  placeholder="Опишите, за что вы просите молиться"
+                                  rows="4"></textarea>
+                    </div>
+
+                    <div class="prayer-request__form-group prayer-request__form-group--checkbox">
+                        <input type="checkbox" 
+                               class="prayer-request__checkbox" 
+                               id="prayerPrivacy" 
+                               name="privacy" 
+                               required>
+                        <label class="prayer-request__label prayer-request__label--checkbox" for="prayerPrivacy">
+                            Я согласен на обработку персональных данных
+                        </label>
+                    </div>
+
+                    <button type="submit" class="prayer-request__submit">Отправить просьбу</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__main">
+                <div class="footer__info">
+                    <h3 class="footer__title">Путь к Христу</h3>
+                    <p class="footer__description">
+                        Сайт о христианстве, вере и духовном развитии для всех возрастных групп. 
+                        Помогаем найти церковь и начать духовный путь.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 22 22">
+                                <path d="M15.929 0H6.07A6.078 6.078 0 0 0 0 6.071v9.858A6.078 6.078 0 0 0 6.071 22h9.858A6.078 6.078 0 0 0 22 15.929V6.07A6.078 6.078 0 0 0 15.929 0Zm4.12 15.929a4.124 4.124 0 0 1-4.12 4.12H6.07a4.124 4.124 0 0 1-4.119-4.12V6.07a4.124 4.124 0 0 1 4.12-4.119h9.857a4.124 4.124 0 0 1 4.12 4.12v9.857Z" fill="currentColor"/>
+                                <path d="M11.001 5.331a5.675 5.675 0 0 0-5.669 5.67 5.675 5.675 0 0 0 5.67 5.668A5.675 5.675 0 0 0 16.67 11 5.675 5.675 0 0 0 11 5.331Zm0 9.386A3.721 3.721 0 0 1 7.284 11a3.721 3.721 0 0 1 3.717-3.717A3.721 3.721 0 0 1 14.718 11a3.721 3.721 0 0 1-3.717 3.717ZM16.907 3.676c-.376 0-.746.152-1.011.419-.267.265-.42.635-.42 1.012s.153.746.42 1.013c.265.265.635.419 1.01.419.378 0 .746-.154 1.013-.42.267-.266.42-.636.42-1.012 0-.377-.153-.747-.42-1.012a1.438 1.438 0 0 0-1.012-.419Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 22 22">
+                                <path d="M22 11C22 4.925 17.075 0 11 0S0 4.925 0 11c0 5.49 4.024 10.04 9.281 10.865v-7.68H6.488V11h2.793V8.577c0-2.755 1.64-4.277 4.15-4.277 1.202 0 2.459.215 2.459.215v2.704h-1.386c-1.365 0-1.792.848-1.792 1.717V11h3.045l-.487 3.185h-2.558v7.68C17.976 21.04 22 16.49 22 11Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 22 22">
+                                <path d="M21.582 6.186a2.506 2.506 0 0 0-1.768-1.768C18.254 4 11 4 11 4s-7.254 0-8.814.418A2.506 2.506 0 0 0 .418 6.186C23 7.746 23 11 23 11s0 3.254-.418 4.814a2.506 2.506 0 0 0 1.768 1.768C3.746 18 11 18 11 18s7.254 0 8.814-.418a2.506 2.506 0 0 0 1.768-1.768C22 14.254 22 11 22 11s0-3.254-.418-4.814ZM8.75 14.25V7.75l5.75 3.25-5.75 3.25Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer__nav">
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">Навигация</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="index.html" class="footer__nav-link">Главная</a></li>
+                            <li><a href="about-christ.html" class="footer__nav-link">О Христе</a></li>
+                            <li><a href="find-church.html" class="footer__nav-link">Найти церковь</a></li>
+                            <li><a href="media.html" class="footer__nav-link">Медиа</a></li>
+                            <li><a href="questions-answers.html" class="footer__nav-link">Вопросы и ответы</a></li>
+                            <li><a href="start-journey.html" class="footer__nav-link">Начать путь</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">Возрастные группы</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="gates/children.html" class="footer__nav-link">Дети (5-11 лет)</a></li>
+                            <li><a href="gates/teenagers.html" class="footer__nav-link">Подростки (12-17 лет)</a></li>
+                            <li><a href="gates/youth.html" class="footer__nav-link">Молодежь (18-30 лет)</a></li>
+                            <li><a href="gates/families.html" class="footer__nav-link">Семьи</a></li>
+                            <li><a href="gates/seniors.html" class="footer__nav-link">Старшее поколение (50+)</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">Контакты</h4>
+                        <ul class="footer__nav-list">
+                            <li>
+                                <a href="mailto:info@put-k-hristu.ru" class="footer__nav-link footer__nav-link--contact">
+                                    <span class="material-icons footer__nav-icon" aria-hidden="true">email</span>
+                                    info@put-k-hristu.ru
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+74951234567" class="footer__nav-link footer__nav-link--contact">
+                                    <span class="material-icons footer__nav-icon" aria-hidden="true">phone</span>
+                                    +7 (495) 123-45-67
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__copyright">
+                    © 2024 Путь к Христу. Все права защищены.
+                </div>
+                <div class="footer__links">
+                    <a href="privacy-policy.html" class="footer__link">Политика конфиденциальности</a>
+                    <a href="terms-of-use.html" class="footer__link">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

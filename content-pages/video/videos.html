@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Видео — Проповеди и библейские уроки | Путь к Христу</title>
+    <meta name="description" content="Смотрите христианские проповеди, библейские уроки и духовные видео. Материалы для всех возрастных групп и уровней духовного развития.">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-link">Перейти к основному содержимому</a>
+
+    <header class="header">
+        <div class="header__container">
+            <nav class="header__nav" aria-label="Основная навигация">
+                <button class="header__mobile-menu-btn" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="material-icons">menu</span>
+                </button>
+                <div class="header__menu-overlay" id="menu-overlay"></div>
+                <ul class="header__menu" id="mobile-menu">
+                    <button class="header__menu-close" aria-label="Закрыть меню" type="button">
+                        <span class="material-icons">close</span>
+                    </button>
+                    <li><a href="../../index.html" class="header__menu-link">Главная</a></li>
+                    <li><a href="../../about-christ.html" class="header__menu-link">О Христе</a></li>
+                    <li class="header__menu-item header__menu-item--has-submenu">
+                        <button class="header__menu-link header__menu-link--submenu" type="button" aria-expanded="false" aria-controls="gates-submenu">
+                            Возрастные группы
+                            <span class="material-icons header__menu-arrow" aria-hidden="true">expand_more</span>
+                        </button>
+                        <ul class="header__submenu" id="gates-submenu">
+                            <li><a href="../../gates/children.html" class="header__submenu-link">Дети (5-11 лет)</a></li>
+                            <li><a href="../../gates/teenagers.html" class="header__submenu-link">Подростки (12-17 лет)</a></li>
+                            <li><a href="../../gates/youth.html" class="header__submenu-link">Молодежь (18-30 лет)</a></li>
+                            <li><a href="../../gates/families.html" class="header__submenu-link">Семьи</a></li>
+                            <li><a href="../../gates/seniors.html" class="header__submenu-link">Старшее поколение (50+)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../find-church.html" class="header__menu-link">Найти церковь</a></li>
+                    <li class="header__menu-item header__menu-item--has-submenu">
+                        <button class="header__menu-link header__menu-link--submenu header__menu-link--active" type="button" aria-expanded="false" aria-controls="media-submenu">
+                            Медиа
+                            <span class="material-icons header__menu-arrow" aria-hidden="true">expand_more</span>
+                        </button>
+                        <ul class="header__submenu" id="media-submenu">
+                            <li><a href="../../media.html" class="header__submenu-link">Все медиа</a></li>
+                            <li><a href="videos.html" class="header__submenu-link header__submenu-link--active">Видео</a></li>
+                            <li><a href="../audio/audios.html" class="header__submenu-link">Аудио</a></li>
+                            <li><a href="../blog/blog.html" class="header__submenu-link">Статьи</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../questions-answers.html" class="header__menu-link">Вопросы и ответы</a></li>
+                    <li><a href="../../start-journey.html" class="header__menu-link">Начать путь</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero__container">
+                <h1 class="hero__title">Видео</h1>
+                <p class="hero__subtitle">Проповеди, библейские уроки и духовные материалы для вашего роста</p>
+            </div>
+        </section>
+
+        <!-- Search and Filters Section -->
+        <section class="content-search">
+            <div class="content-search__container">
+                <div class="content-search__form">
+                    <div class="content-search__input-group">
+                        <input type="text" id="videoSearchInput" class="content-search__input" placeholder="Поиск по названию, пастору или теме..." autocomplete="off">
+                        <button type="button" class="content-search__submit" aria-label="Найти видео">
+                            <span class="material-icons">search</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="content-search__filters">
+                    <select id="topicFilter" class="content-search__filter">
+                        <option value="">Все темы</option>
+                        <option value="salvation">Спасение</option>
+                        <option value="prayer">Молитва</option>
+                        <option value="bible">Библия</option>
+                        <option value="family">Семья</option>
+                        <option value="youth">Молодежь</option>
+                        <option value="worship">Поклонение</option>
+                    </select>
+                    <select id="pastorFilter" class="content-search__filter">
+                        <option value="">Все пасторы</option>
+                        <option value="ivanov">Пастор Иванов</option>
+                        <option value="petrov">Пастор Петров</option>
+                        <option value="sidorov">Пастор Сидоров</option>
+                    </select>
+                    <select id="dateFilter" class="content-search__filter">
+                        <option value="">Все даты</option>
+                        <option value="week">За неделю</option>
+                        <option value="month">За месяц</option>
+                        <option value="year">За год</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video List Section -->
+        <section class="video-list">
+            <div class="video-list__container">
+                <div class="video-list__header">
+                    <h2 class="video-list__title">Все видео</h2>
+                    <div class="video-list__count" id="videoCount">156 видео</div>
+                </div>
+                <div class="video-list__grid" id="videoGrid">
+                    <article class="video-card">
+                        <div class="video-card__image">
+                            <img src="https://placehold.co/400x225/8B0000/FFFFFF?text=Проповедь" alt="Обложка видео">
+                            <div class="video-card__play-btn">
+                                <span class="material-icons">play_arrow</span>
+                            </div>
+                            <div class="video-card__duration">45:30</div>
+                        </div>
+                        <div class="video-card__content">
+                            <h3 class="video-card__title">Надежда в трудные времена</h3>
+                            <p class="video-card__description">Проповедь о том, как найти надежду и утешение в сложных жизненных ситуациях через веру в Бога.</p>
+                            <div class="video-card__meta">
+                                <span class="video-card__pastor">Пастор Иванов</span>
+                                <span class="video-card__date">15 декабря 2024</span>
+                            </div>
+                            <div class="video-card__topics">
+                                <span class="video-card__topic">Надежда</span>
+                                <span class="video-card__topic">Утешение</span>
+                            </div>
+                            <a href="video-item-page.html" class="video-card__link">Смотреть</a>
+                        </div>
+                    </article>
+
+                    <article class="video-card">
+                        <div class="video-card__image">
+                            <img src="https://placehold.co/400x225/8B0000/FFFFFF?text=Урок" alt="Обложка видео">
+                            <div class="video-card__play-btn">
+                                <span class="material-icons">play_arrow</span>
+                            </div>
+                            <div class="video-card__duration">32:15</div>
+                        </div>
+                        <div class="video-card__content">
+                            <h3 class="video-card__title">Библейский урок: Книга Иова</h3>
+                            <p class="video-card__description">Глубокое изучение книги Иова и уроки о страдании, вере и Божьей справедливости.</p>
+                            <div class="video-card__meta">
+                                <span class="video-card__pastor">Пастор Петров</span>
+                                <span class="video-card__date">12 декабря 2024</span>
+                            </div>
+                            <div class="video-card__topics">
+                                <span class="video-card__topic">Библия</span>
+                                <span class="video-card__topic">Изучение</span>
+                            </div>
+                            <a href="video-item-page.html" class="video-card__link">Смотреть</a>
+                        </div>
+                    </article>
+
+                    <article class="video-card">
+                        <div class="video-card__image">
+                            <img src="https://placehold.co/400x225/8B0000/FFFFFF?text=Молодежь" alt="Обложка видео">
+                            <div class="video-card__play-btn">
+                                <span class="material-icons">play_arrow</span>
+                            </div>
+                            <div class="video-card__duration">28:45</div>
+                        </div>
+                        <div class="video-card__content">
+                            <h3 class="video-card__title">Вера в современном мире</h3>
+                            <p class="video-card__description">Размышления о том, как оставаться верным Христу в современном мире и быть светом для других.</p>
+                            <div class="video-card__meta">
+                                <span class="video-card__pastor">Пастор Сидоров</span>
+                                <span class="video-card__date">10 декабря 2024</span>
+                            </div>
+                            <div class="video-card__topics">
+                                <span class="video-card__topic">Молодежь</span>
+                                <span class="video-card__topic">Вера</span>
+                            </div>
+                            <a href="video-item-page.html" class="video-card__link">Смотреть</a>
+                        </div>
+                    </article>
+
+                    <article class="video-card">
+                        <div class="video-card__image">
+                            <img src="https://placehold.co/400x225/8B0000/FFFFFF?text=Семья" alt="Обложка видео">
+                            <div class="video-card__play-btn">
+                                <span class="material-icons">play_arrow</span>
+                            </div>
+                            <div class="video-card__duration">38:20</div>
+                        </div>
+                        <div class="video-card__content">
+                            <h3 class="video-card__title">Христианские ценности в семье</h3>
+                            <p class="video-card__description">Как построить крепкую христианскую семью, основанную на библейских принципах и любви.</p>
+                            <div class="video-card__meta">
+                                <span class="video-card__pastor">Пастор Иванов</span>
+                                <span class="video-card__date">8 декабря 2024</span>
+                            </div>
+                            <div class="video-card__topics">
+                                <span class="video-card__topic">Семья</span>
+                                <span class="video-card__topic">Ценности</span>
+                            </div>
+                            <a href="video-item-page.html" class="video-card__link">Смотреть</a>
+                        </div>
+                    </article>
+
+                    <article class="video-card">
+                        <div class="video-card__image">
+                            <img src="https://placehold.co/400x225/8B0000/FFFFFF?text=Поклонение" alt="Обложка видео">
+                            <div class="video-card__play-btn">
+                                <span class="material-icons">play_arrow</span>
+                            </div>
+                            <div class="video-card__duration">41:10</div>
+                        </div>
+                        <div class="video-card__content">
+                            <h3 class="video-card__title">Поклонение в духе и истине</h3>
+                            <p class="video-card__description">Учение о том, что такое истинное поклонение Богу и как поклоняться Ему в духе и истине.</p>
+                            <div class="video-card__meta">
+                                <span class="video-card__pastor">Пастор Петров</span>
+                                <span class="video-card__date">5 декабря 2024</span>
+                            </div>
+                            <div class="video-card__topics">
+                                <span class="video-card__topic">Поклонение</span>
+                                <span class="video-card__topic">Духовность</span>
+                            </div>
+                            <a href="video-item-page.html" class="video-card__link">Смотреть</a>
+                        </div>
+                    </article>
+
+                    <article class="video-card">
+                        <div class="video-card__image">
+                            <img src="https://placehold.co/400x225/8B0000/FFFFFF?text=Дети" alt="Обложка видео">
+                            <div class="video-card__play-btn">
+                                <span class="material-icons">play_arrow</span>
+                            </div>
+                            <div class="video-card__duration">25:30</div>
+                        </div>
+                        <div class="video-card__content">
+                            <h3 class="video-card__title">Библейские истории для детей</h3>
+                            <p class="video-card__description">Увлекательные библейские истории, рассказанные специально для детей с яркими иллюстрациями.</p>
+                            <div class="video-card__meta">
+                                <span class="video-card__pastor">Детская команда</span>
+                                <span class="video-card__date">3 декабря 2024</span>
+                            </div>
+                            <div class="video-card__topics">
+                                <span class="video-card__topic">Дети</span>
+                                <span class="video-card__topic">Библия</span>
+                            </div>
+                            <a href="video-item-page.html" class="video-card__link">Смотреть</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="video-list__pagination">
+                    <button class="video-list__load-more" type="button">Загрузить еще</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Playlists Section -->
+        <section class="featured-playlists">
+            <div class="featured-playlists__container">
+                <h2 class="featured-playlists__title">Рекомендуемые плейлисты</h2>
+                <div class="featured-playlists__grid">
+                    <div class="playlist-card">
+                        <div class="playlist-card__image">
+                            <img src="https://placehold.co/300x200/8B0000/FFFFFF?text=Плейлист" alt="Обложка плейлиста">
+                            <div class="playlist-card__play-btn">
+                                <span class="material-icons">play_arrow</span>
+                            </div>
+                        </div>
+                        <div class="playlist-card__content">
+                            <h3 class="playlist-card__title">Проповеди на неделю</h3>
+                            <p class="playlist-card__description">Еженедельные проповеди для духовного роста</p>
+                            <div class="playlist-card__count">12 видео</div>
+                        </div>
+                    </div>
+                    <div class="playlist-card">
+                        <div class="playlist-card__image">
+                            <img src="https://placehold.co/300x200/8B0000/FFFFFF?text=Плейлист" alt="Обложка плейлиста">
+                            <div class="playlist-card__play-btn">
+                                <span class="material-icons">play_arrow</span>
+                            </div>
+                        </div>
+                        <div class="playlist-card__content">
+                            <h3 class="playlist-card__title">Библейские уроки</h3>
+                            <p class="playlist-card__description">Глубокое изучение Священного Писания</p>
+                            <div class="playlist-card__count">15 видео</div>
+                        </div>
+                    </div>
+                    <div class="playlist-card">
+                        <div class="playlist-card__image">
+                            <img src="https://placehold.co/300x200/8B0000/FFFFFF?text=Плейлист" alt="Обложка плейлиста">
+                            <div class="playlist-card__play-btn">
+                                <span class="material-icons">play_arrow</span>
+                            </div>
+                        </div>
+                        <div class="playlist-card__content">
+                            <h3 class="playlist-card__title">Для семей</h3>
+                            <p class="playlist-card__description">Материалы для семейного просмотра</p>
+                            <div class="playlist-card__count">8 видео</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__main">
+                <div class="footer__brand">
+                    <h3 class="footer__title">Путь к Христу</h3>
+                    <p class="footer__description">Ваше духовное путешествие начинается здесь. Мы поможем вам найти ответы на вопросы о вере и начать путь с Богом.</p>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__nav-section">
+                        <h4 class="footer__nav-title">Навигация</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="../../index.html" class="footer__nav-link">Главная</a></li>
+                            <li><a href="../../about-christ.html" class="footer__nav-link">О Христе</a></li>
+                            <li><a href="../../find-church.html" class="footer__nav-link">Найти церковь</a></li>
+                            <li><a href="../../media.html" class="footer__nav-link">Медиа</a></li>
+                            <li><a href="../../questions-answers.html" class="footer__nav-link">Вопросы и ответы</a></li>
+                            <li><a href="../../start-journey.html" class="footer__nav-link">Начать путь</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-section">
+                        <h4 class="footer__nav-title">Возрастные группы</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="../../gates/children.html" class="footer__nav-link">Дети (5-11 лет)</a></li>
+                            <li><a href="../../gates/teenagers.html" class="footer__nav-link">Подростки (12-17 лет)</a></li>
+                            <li><a href="../../gates/youth.html" class="footer__nav-link">Молодежь (18-30 лет)</a></li>
+                            <li><a href="../../gates/families.html" class="footer__nav-link">Семьи</a></li>
+                            <li><a href="../../gates/seniors.html" class="footer__nav-link">Старшее поколение (50+)</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-section">
+                        <h4 class="footer__nav-title">Контакты</h4>
+                        <ul class="footer__nav-list">
+                            <li>
+                                <a href="mailto:info@put-k-hristu.ru" class="footer__nav-link footer__nav-link--contact">
+                                    <span class="material-icons footer__nav-icon" aria-hidden="true">email</span>
+                                    info@put-k-hristu.ru
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+74951234567" class="footer__nav-link footer__nav-link--contact">
+                                    <span class="material-icons footer__nav-icon" aria-hidden="true">phone</span>
+                                    +7 (495) 123-45-67
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__copyright">
+                    © 2024 Путь к Христу. Все права защищены.
+                </div>
+                <div class="footer__links">
+                    <a href="../../privacy-policy.html" class="footer__link">Политика конфиденциальности</a>
+                    <a href="../../terms-of-use.html" class="footer__link">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>

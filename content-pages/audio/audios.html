@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Аудио — Проповеди и подкасты | Путь к Христу</title>
+    <meta name="description" content="Слушайте христианские проповеди, подкасты и аудиоматериалы. Библейские размышления, духовные наставления и музыка для души.">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-link">Перейти к основному содержимому</a>
+
+    <header class="header">
+        <div class="header__container">
+            <nav class="header__nav" aria-label="Основная навигация">
+                <button class="header__mobile-menu-btn" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="material-icons">menu</span>
+                </button>
+                <div class="header__menu-overlay" id="menu-overlay"></div>
+                <ul class="header__menu" id="mobile-menu">
+                    <button class="header__menu-close" aria-label="Закрыть меню" type="button">
+                        <span class="material-icons">close</span>
+                    </button>
+                    <li><a href="../../index.html" class="header__menu-link">Главная</a></li>
+                    <li><a href="../../about-christ.html" class="header__menu-link">О Христе</a></li>
+                    <li class="header__menu-item header__menu-item--has-submenu">
+                        <button class="header__menu-link header__menu-link--submenu" type="button" aria-expanded="false" aria-controls="gates-submenu">
+                            Возрастные группы
+                            <span class="material-icons header__menu-arrow" aria-hidden="true">expand_more</span>
+                        </button>
+                        <ul class="header__submenu" id="gates-submenu">
+                            <li><a href="../../gates/children.html" class="header__submenu-link">Дети (5-11 лет)</a></li>
+                            <li><a href="../../gates/teenagers.html" class="header__submenu-link">Подростки (12-17 лет)</a></li>
+                            <li><a href="../../gates/youth.html" class="header__submenu-link">Молодежь (18-30 лет)</a></li>
+                            <li><a href="../../gates/families.html" class="header__submenu-link">Семьи</a></li>
+                            <li><a href="../../gates/seniors.html" class="header__submenu-link">Старшее поколение (50+)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../find-church.html" class="header__menu-link">Найти церковь</a></li>
+                    <li class="header__menu-item header__menu-item--has-submenu">
+                        <button class="header__menu-link header__menu-link--submenu header__menu-link--active" type="button" aria-expanded="false" aria-controls="media-submenu">
+                            Медиа
+                            <span class="material-icons header__menu-arrow" aria-hidden="true">expand_more</span>
+                        </button>
+                        <ul class="header__submenu" id="media-submenu">
+                            <li><a href="../../media.html" class="header__submenu-link">Все медиа</a></li>
+                            <li><a href="../video/videos.html" class="header__submenu-link">Видео</a></li>
+                            <li><a href="audios.html" class="header__submenu-link header__submenu-link--active">Аудио</a></li>
+                            <li><a href="../blog/blog.html" class="header__submenu-link">Статьи</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../questions-answers.html" class="header__menu-link">Вопросы и ответы</a></li>
+                    <li><a href="../../start-journey.html" class="header__menu-link">Начать путь</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero__container">
+                <h1 class="hero__title">Аудио</h1>
+                <p class="hero__subtitle">Проповеди, подкасты и духовная музыка для вашего сердца</p>
+            </div>
+        </section>
+
+        <!-- Search and Filters Section -->
+        <section class="content-search">
+            <div class="content-search__container">
+                <div class="content-search__form">
+                    <div class="content-search__input-group">
+                        <input type="text" id="audioSearchInput" class="content-search__input" placeholder="Поиск по названию, пастору или теме..." autocomplete="off">
+                        <button type="button" class="content-search__submit" aria-label="Найти аудио">
+                            <span class="material-icons">search</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="content-search__filters">
+                    <select id="topicFilter" class="content-search__filter">
+                        <option value="">Все темы</option>
+                        <option value="salvation">Спасение</option>
+                        <option value="prayer">Молитва</option>
+                        <option value="bible">Библия</option>
+                        <option value="family">Семья</option>
+                        <option value="youth">Молодежь</option>
+                        <option value="worship">Поклонение</option>
+                    </select>
+                    <select id="pastorFilter" class="content-search__filter">
+                        <option value="">Все пасторы</option>
+                        <option value="ivanov">Пастор Иванов</option>
+                        <option value="petrov">Пастор Петров</option>
+                        <option value="sidorov">Пастор Сидоров</option>
+                    </select>
+                    <select id="dateFilter" class="content-search__filter">
+                        <option value="">Все даты</option>
+                        <option value="week">За неделю</option>
+                        <option value="month">За месяц</option>
+                        <option value="year">За год</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audio List Section -->
+        <section class="audio-list">
+            <div class="audio-list__container">
+                <div class="audio-list__header">
+                    <h2 class="audio-list__title">Все аудио</h2>
+                    <div class="audio-list__count" id="audioCount">89 аудио</div>
+                </div>
+                <div class="audio-list__grid" id="audioGrid">
+                    <article class="audio-card">
+                        <div class="audio-card__image">
+                            <img src="https://placehold.co/300x200/8B0000/FFFFFF?text=Проповедь" alt="Обложка аудио">
+                            <div class="audio-card__play-btn">
+                                <span class="material-icons">play_arrow</span>
+                            </div>
+                            <div class="audio-card__duration">45:30</div>
+                        </div>
+                        <div class="audio-card__content">
+                            <h3 class="audio-card__title">Надежда в трудные времена</h3>
+                            <p class="audio-card__description">Проповедь о том, как найти надежду и утешение в сложных жизненных ситуациях через веру в Бога.</p>
+                            <div class="audio-card__meta">
+                                <span class="audio-card__pastor">Пастор Иванов</span>
+                                <span class="audio-card__date">15 декабря 2024</span>
+                            </div>
+                            <div class="audio-card__topics">
+                                <span class="audio-card__topic">Надежда</span>
+                                <span class="audio-card__topic">Утешение</span>
+                            </div>
+                            <a href="audio-item-page.html" class="audio-card__link">Слушать</a>
+                        </div>
+                    </article>
+
+                    <article class="audio-card">
+                        <div class="audio-card__image">
+                            <img src="https://placehold.co/300x200/8B0000/FFFFFF?text=Подкаст" alt="Обложка аудио">
+                            <div class="audio-card__play-btn">
+                                <span class="material-icons">play_arrow</span>
+                            </div>
+                            <div class="audio-card__duration">32:15</div>
+                        </div>
+                        <div class="audio-card__content">
+                            <h3 class="audio-card__title">Молитва в повседневной жизни</h3>
+                            <p class="audio-card__description">Практические советы о том, как сделать молитву неотъемлемой частью каждого дня.</p>
+                            <div class="audio-card__meta">
+                                <span class="audio-card__pastor">Пастор Петров</span>
+                                <span class="audio-card__date">12 декабря 2024</span>
+                            </div>
+                            <div class="audio-card__topics">
+                                <span class="audio-card__topic">Молитва</span>
+                                <span class="audio-card__topic">Духовность</span>
+                            </div>
+                            <a href="audio-item-page.html" class="audio-card__link">Слушать</a>
+                        </div>
+                    </article>
+
+                    <article class="audio-card">
+                        <div class="audio-card__image">
+                            <img src="https://placehold.co/300x200/8B0000/FFFFFF?text=Музыка" alt="Обложка аудио">
+                            <div class="audio-card__play-btn">
+                                <span class="material-icons">play_arrow</span>
+                            </div>
+                            <div class="audio-card__duration">28:45</div>
+                        </div>
+                        <div class="audio-card__content">
+                            <h3 class="audio-card__title">Христианские гимны</h3>
+                            <p class="audio-card__description">Коллекция традиционных и современных христианских гимнов для поклонения и размышления.</p>
+                            <div class="audio-card__meta">
+                                <span class="audio-card__pastor">Хор церкви</span>
+                                <span class="audio-card__date">10 декабря 2024</span>
+                            </div>
+                            <div class="audio-card__topics">
+                                <span class="audio-card__topic">Поклонение</span>
+                                <span class="audio-card__topic">Музыка</span>
+                            </div>
+                            <a href="audio-item-page.html" class="audio-card__link">Слушать</a>
+                        </div>
+                    </article>
+
+                    <article class="audio-card">
+                        <div class="audio-card__image">
+                            <img src="https://placehold.co/300x200/8B0000/FFFFFF?text=Библия" alt="Обложка аудио">
+                            <div class="audio-card__play-btn">
+                                <span class="material-icons">play_arrow</span>
+                            </div>
+                            <div class="audio-card__duration">38:20</div>
+                        </div>
+                        <div class="audio-card__content">
+                            <h3 class="audio-card__title">Изучение Евангелия от Иоанна</h3>
+                            <p class="audio-card__description">Глубокое изучение первой главы Евангелия от Иоанна с практическими применениями для современной жизни.</p>
+                            <div class="audio-card__meta">
+                                <span class="audio-card__pastor">Пастор Сидоров</span>
+                                <span class="audio-card__date">8 декабря 2024</span>
+                            </div>
+                            <div class="audio-card__topics">
+                                <span class="audio-card__topic">Библия</span>
+                                <span class="audio-card__topic">Изучение</span>
+                            </div>
+                            <a href="audio-item-page.html" class="audio-card__link">Слушать</a>
+                        </div>
+                    </article>
+
+                    <article class="audio-card">
+                        <div class="audio-card__image">
+                            <img src="https://placehold.co/300x200/8B0000/FFFFFF?text=Семья" alt="Обложка аудио">
+                            <div class="audio-card__play-btn">
+                                <span class="material-icons">play_arrow</span>
+                            </div>
+                            <div class="audio-card__duration">41:10</div>
+                        </div>
+                        <div class="audio-card__content">
+                            <h3 class="audio-card__title">Христианские ценности в семье</h3>
+                            <p class="audio-card__description">Как построить крепкую христианскую семью, основанную на библейских принципах и любви.</p>
+                            <div class="audio-card__meta">
+                                <span class="audio-card__pastor">Пастор Иванов</span>
+                                <span class="audio-card__date">5 декабря 2024</span>
+                            </div>
+                            <div class="audio-card__topics">
+                                <span class="audio-card__topic">Семья</span>
+                                <span class="audio-card__topic">Ценности</span>
+                            </div>
+                            <a href="audio-item-page.html" class="audio-card__link">Слушать</a>
+                        </div>
+                    </article>
+
+                    <article class="audio-card">
+                        <div class="audio-card__image">
+                            <img src="https://placehold.co/300x200/8B0000/FFFFFF?text=Молодежь" alt="Обложка аудио">
+                            <div class="audio-card__play-btn">
+                                <span class="material-icons">play_arrow</span>
+                            </div>
+                            <div class="audio-card__duration">35:55</div>
+                        </div>
+                        <div class="audio-card__content">
+                            <h3 class="audio-card__title">Вера в современном мире</h3>
+                            <p class="audio-card__description">Размышления о том, как оставаться верным Христу в современном мире и быть светом для других.</p>
+                            <div class="audio-card__meta">
+                                <span class="audio-card__pastor">Пастор Петров</span>
+                                <span class="audio-card__date">3 декабря 2024</span>
+                            </div>
+                            <div class="audio-card__topics">
+                                <span class="audio-card__topic">Молодежь</span>
+                                <span class="audio-card__topic">Вера</span>
+                            </div>
+                            <a href="audio-item-page.html" class="audio-card__link">Слушать</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="audio-list__pagination">
+                    <button class="audio-list__load-more" type="button">Загрузить еще</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Playlists Section -->
+        <section class="related-playlists">
+            <div class="related-playlists__container">
+                <h2 class="related-playlists__title">Связанные подкасты</h2>
+                <div class="related-playlists__grid">
+                    <div class="playlist-card">
+                        <div class="playlist-card__icon">
+                            <span class="material-icons">queue_music</span>
+                        </div>
+                        <h3 class="playlist-card__title">Проповеди на неделю</h3>
+                        <p class="playlist-card__description">Еженедельные проповеди для духовного роста</p>
+                        <div class="playlist-card__count">12 аудио</div>
+                    </div>
+                    <div class="playlist-card">
+                        <div class="playlist-card__icon">
+                            <span class="material-icons">family_restroom</span>
+                        </div>
+                        <h3 class="playlist-card__title">Семейные размышления</h3>
+                        <p class="playlist-card__description">Материалы для семейного изучения Библии</p>
+                        <div class="playlist-card__count">8 аудио</div>
+                    </div>
+                    <div class="playlist-card">
+                        <div class="playlist-card__icon">
+                            <span class="material-icons">school</span>
+                        </div>
+                        <h3 class="playlist-card__title">Библейские уроки</h3>
+                        <p class="playlist-card__description">Глубокое изучение Священного Писания</p>
+                        <div class="playlist-card__count">15 аудио</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__main">
+                <div class="footer__brand">
+                    <h3 class="footer__title">Путь к Христу</h3>
+                    <p class="footer__description">Ваше духовное путешествие начинается здесь. Мы поможем вам найти ответы на вопросы о вере и начать путь с Богом.</p>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__nav-section">
+                        <h4 class="footer__nav-title">Навигация</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="../../index.html" class="footer__nav-link">Главная</a></li>
+                            <li><a href="../../about-christ.html" class="footer__nav-link">О Христе</a></li>
+                            <li><a href="../../find-church.html" class="footer__nav-link">Найти церковь</a></li>
+                            <li><a href="../../media.html" class="footer__nav-link">Медиа</a></li>
+                            <li><a href="../../questions-answers.html" class="footer__nav-link">Вопросы и ответы</a></li>
+                            <li><a href="../../start-journey.html" class="footer__nav-link">Начать путь</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-section">
+                        <h4 class="footer__nav-title">Возрастные группы</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="../../gates/children.html" class="footer__nav-link">Дети (5-11 лет)</a></li>
+                            <li><a href="../../gates/teenagers.html" class="footer__nav-link">Подростки (12-17 лет)</a></li>
+                            <li><a href="../../gates/youth.html" class="footer__nav-link">Молодежь (18-30 лет)</a></li>
+                            <li><a href="../../gates/families.html" class="footer__nav-link">Семьи</a></li>
+                            <li><a href="../../gates/seniors.html" class="footer__nav-link">Старшее поколение (50+)</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-section">
+                        <h4 class="footer__nav-title">Контакты</h4>
+                        <ul class="footer__nav-list">
+                            <li>
+                                <a href="mailto:info@put-k-hristu.ru" class="footer__nav-link footer__nav-link--contact">
+                                    <span class="material-icons footer__nav-icon" aria-hidden="true">email</span>
+                                    info@put-k-hristu.ru
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+74951234567" class="footer__nav-link footer__nav-link--contact">
+                                    <span class="material-icons footer__nav-icon" aria-hidden="true">phone</span>
+                                    +7 (495) 123-45-67
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__copyright">
+                    © 2024 Путь к Христу. Все права защищены.
+                </div>
+                <div class="footer__links">
+                    <a href="../../privacy-policy.html" class="footer__link">Политика конфиденциальности</a>
+                    <a href="../../terms-of-use.html" class="footer__link">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>

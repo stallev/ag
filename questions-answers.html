@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Вопросы и ответы — Путь к Христу</title>
+    <meta name="description" content="Получите ответы на вопросы о христианстве, вере и духовной жизни. FAQ, видео-ответы пасторов, анонимные вопросы и библейские основания.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-link">Перейти к основному содержимому</a>
+
+    <header class="header">
+        <div class="header__container">
+            <nav class="header__nav" aria-label="Основная навигация">
+                <button class="header__mobile-menu-btn" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="material-icons">menu</span>
+                </button>
+                <div class="header__menu-overlay" id="menu-overlay"></div>
+                <ul class="header__menu" id="mobile-menu">
+                    <button class="header__menu-close" aria-label="Закрыть меню" type="button">
+                        <span class="material-icons">close</span>
+                    </button>
+                    <li><a href="index.html" class="header__menu-link">Главная</a></li>
+                    <li><a href="about-christ.html" class="header__menu-link">О Христе</a></li>
+                    <li class="header__menu-item header__menu-item--has-submenu">
+                        <button class="header__menu-link header__menu-link--submenu" type="button" aria-expanded="false" aria-controls="gates-submenu">
+                            Возрастные группы
+                            <span class="material-icons header__menu-arrow" aria-hidden="true">expand_more</span>
+                        </button>
+                        <ul class="header__submenu" id="gates-submenu">
+                            <li><a href="gates/children.html" class="header__submenu-link">Дети (5-11 лет)</a></li>
+                            <li><a href="gates/teenagers.html" class="header__submenu-link">Подростки (12-17 лет)</a></li>
+                            <li><a href="gates/youth.html" class="header__submenu-link">Молодежь (18-30 лет)</a></li>
+                            <li><a href="gates/families.html" class="header__submenu-link">Семьи</a></li>
+                            <li><a href="gates/seniors.html" class="header__submenu-link">Старшее поколение (50+)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="find-church.html" class="header__menu-link">Найти церковь</a></li>
+                    <li class="header__menu-item header__menu-item--has-submenu">
+                        <button class="header__menu-link header__menu-link--submenu" type="button" aria-expanded="false" aria-controls="media-submenu">
+                            Медиа
+                            <span class="material-icons header__menu-arrow" aria-hidden="true">expand_more</span>
+                        </button>
+                        <ul class="header__submenu" id="media-submenu">
+                            <li><a href="media.html" class="header__submenu-link">Все медиа</a></li>
+                            <li><a href="content-pages/video/videos.html" class="header__submenu-link">Видео</a></li>
+                            <li><a href="content-pages/audio/audios.html" class="header__submenu-link">Аудио</a></li>
+                            <li><a href="content-pages/blog/blog.html" class="header__submenu-link">Статьи</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="questions-answers.html" class="header__menu-link header__menu-link--active">Вопросы и ответы</a></li>
+                    <li><a href="start-journey.html" class="header__menu-link">Начать путь</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero__container">
+                <h1 class="hero__title">Вопросы и ответы</h1>
+                <p class="hero__subtitle">Найдите ответы на ваши вопросы о вере и христианстве</p>
+            </div>
+        </section>
+
+        <!-- Smart Search Section -->
+        <section class="qa-search">
+            <div class="qa-search__container">
+                <h2 class="qa-search__title">Поиск по базе знаний</h2>
+                <form class="qa-search__form" id="qaSearchForm">
+                    <div class="qa-search__input-group">
+                        <input type="text" id="qaSearchInput" class="qa-search__input" placeholder="Введите ваш вопрос..." autocomplete="off">
+                        <button type="submit" class="qa-search__submit" aria-label="Найти ответ">
+                            <span class="material-icons">search</span>
+                        </button>
+                    </div>
+                    <div class="qa-search__suggestions" id="qaSuggestions"></div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Question of the Week Section -->
+        <section class="question-week">
+            <div class="question-week__container">
+                <div class="question-week__badge">Вопрос недели</div>
+                <h2 class="question-week__title">Что такое спасение и как его получить?</h2>
+                <div class="question-week__content">
+                    <div class="question-week__video">
+                        <div class="question-week__video-placeholder">
+                            <span class="material-icons">play_circle_outline</span>
+                            <p>Видео-ответ пастора</p>
+                        </div>
+                    </div>
+                    <div class="question-week__text">
+                        <p>Спасение — это дар Божий, который мы получаем через веру в Иисуса Христа. Это не то, что мы можем заслужить своими делами, но то, что Бог дарует нам по Своей благодати.</p>
+                        <blockquote class="question-week__quote">
+                            "Ибо благодатью вы спасены через веру, и сие не от вас, Божий дар: не от дел, чтобы никто не хвалился."
+                            <cite>— Ефесянам 2:8-9</cite>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="question-week__rating">
+                    <span class="question-week__rating-text">Был ли ответ полезен?</span>
+                    <div class="question-week__rating-buttons">
+                        <button class="question-week__rating-btn" type="button" aria-label="Полезно">
+                            <span class="material-icons">thumb_up</span>
+                            <span class="question-week__rating-count">24</span>
+                        </button>
+                        <button class="question-week__rating-btn" type="button" aria-label="Не полезно">
+                            <span class="material-icons">thumb_down</span>
+                            <span class="question-week__rating-count">2</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Categories Section -->
+        <section class="qa-categories">
+            <div class="qa-categories__container">
+                <h2 class="qa-categories__title">Популярные категории</h2>
+                <div class="qa-categories__grid">
+                    <div class="qa-category">
+                        <button class="qa-category__header" type="button" aria-expanded="false" aria-controls="category-salvation">
+                            <span class="material-icons qa-category__icon">favorite</span>
+                            <h3 class="qa-category__title">Спасение и вера</h3>
+                            <span class="material-icons qa-category__arrow">expand_more</span>
+                        </button>
+                        <div class="qa-category__content" id="category-salvation">
+                            <div class="qa-category__questions">
+                                <div class="qa-question">
+                                    <button class="qa-question__header" type="button" aria-expanded="false">
+                                        <h4 class="qa-question__title">Что такое спасение?</h4>
+                                        <span class="material-icons qa-question__arrow">expand_more</span>
+                                    </button>
+                                    <div class="qa-question__answer">
+                                        <p>Спасение — это освобождение от греха и его последствий через веру в Иисуса Христа. Это дар Божий, который мы получаем не за наши заслуги, а по благодати.</p>
+                                        <div class="qa-question__bible-ref">
+                                            <strong>Библейское основание:</strong>
+                                            <a href="#" class="qa-question__bible-link">Римлянам 3:23-24</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="qa-question">
+                                    <button class="qa-question__header" type="button" aria-expanded="false">
+                                        <h4 class="qa-question__title">Как принять Иисуса Христа?</h4>
+                                        <span class="material-icons qa-question__arrow">expand_more</span>
+                                    </button>
+                                    <div class="qa-question__answer">
+                                        <p>Принять Иисуса Христа означает признать Его своим Господом и Спасителем, покаяться в грехах и доверить Ему свою жизнь.</p>
+                                        <div class="qa-question__bible-ref">
+                                            <strong>Библейское основание:</strong>
+                                            <a href="#" class="qa-question__bible-link">Иоанна 1:12</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa-category">
+                        <button class="qa-category__header" type="button" aria-expanded="false" aria-controls="category-prayer">
+                            <span class="material-icons qa-category__icon">prayer</span>
+                            <h3 class="qa-category__title">Молитва и общение с Богом</h3>
+                            <span class="material-icons qa-category__arrow">expand_more</span>
+                        </button>
+                        <div class="qa-category__content" id="category-prayer">
+                            <div class="qa-category__questions">
+                                <div class="qa-question">
+                                    <button class="qa-question__header" type="button" aria-expanded="false">
+                                        <h4 class="qa-question__title">Как правильно молиться?</h4>
+                                        <span class="material-icons qa-question__arrow">expand_more</span>
+                                    </button>
+                                    <div class="qa-question__answer">
+                                        <p>Молитва — это разговор с Богом. Молитесь искренне, от всего сердца, благодарите Бога, просите прощения за грехи и молитесь за других.</p>
+                                        <div class="qa-question__bible-ref">
+                                            <strong>Библейское основание:</strong>
+                                            <a href="#" class="qa-question__bible-link">Матфея 6:9-13</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa-category">
+                        <button class="qa-category__header" type="button" aria-expanded="false" aria-controls="category-bible">
+                            <span class="material-icons qa-category__icon">menu_book</span>
+                            <h3 class="qa-category__title">Библия и изучение</h3>
+                            <span class="material-icons qa-category__arrow">expand_more</span>
+                        </button>
+                        <div class="qa-category__content" id="category-bible">
+                            <div class="qa-category__questions">
+                                <div class="qa-question">
+                                    <button class="qa-question__header" type="button" aria-expanded="false">
+                                        <h4 class="qa-question__title">С чего начать изучение Библии?</h4>
+                                        <span class="material-icons qa-question__arrow">expand_more</span>
+                                    </button>
+                                    <div class="qa-question__answer">
+                                        <p>Начните с Евангелия от Иоанна, затем прочитайте остальные Евангелия. Используйте план чтения и молитесь о понимании.</p>
+                                        <div class="qa-question__bible-ref">
+                                            <strong>Библейское основание:</strong>
+                                            <a href="#" class="qa-question__bible-link">2 Тимофею 3:16-17</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa-category">
+                        <button class="qa-category__header" type="button" aria-expanded="false" aria-controls="category-church">
+                            <span class="material-icons qa-category__icon">church</span>
+                            <h3 class="qa-category__title">Церковь и общение</h3>
+                            <span class="material-icons qa-category__arrow">expand_more</span>
+                        </button>
+                        <div class="qa-category__content" id="category-church">
+                            <div class="qa-category__questions">
+                                <div class="qa-question">
+                                    <button class="qa-question__header" type="button" aria-expanded="false">
+                                        <h4 class="qa-question__title">Зачем нужна церковь?</h4>
+                                        <span class="material-icons qa-question__arrow">expand_more</span>
+                                    </button>
+                                    <div class="qa-question__answer">
+                                        <p>Церковь — это место поклонения Богу, изучения Библии, общения с верующими и служения другим людям.</p>
+                                        <div class="qa-question__bible-ref">
+                                            <strong>Библейское основание:</strong>
+                                            <a href="#" class="qa-question__bible-link">Евреям 10:25</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ask Question Form Section -->
+        <section class="ask-question">
+            <div class="ask-question__container">
+                <h2 class="ask-question__title">Задать вопрос пастору</h2>
+                <p class="ask-question__subtitle">Анонимно и конфиденциально. Получите персональный ответ в течение 24 часов.</p>
+                <form class="ask-question__form" id="askQuestionForm">
+                    <div class="ask-question__field">
+                        <label for="questionCategory" class="ask-question__label">Категория вопроса</label>
+                        <select id="questionCategory" name="category" class="ask-question__select" required>
+                            <option value="">Выберите категорию</option>
+                            <option value="salvation">Спасение и вера</option>
+                            <option value="prayer">Молитва и общение с Богом</option>
+                            <option value="bible">Библия и изучение</option>
+                            <option value="church">Церковь и общение</option>
+                            <option value="life">Христианская жизнь</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    <div class="ask-question__field">
+                        <label for="questionText" class="ask-question__label">Ваш вопрос</label>
+                        <textarea id="questionText" name="question" class="ask-question__textarea" placeholder="Опишите ваш вопрос подробно..." required></textarea>
+                    </div>
+                    <div class="ask-question__field">
+                        <label for="questionEmail" class="ask-question__label">Email для ответа (необязательно)</label>
+                        <input type="email" id="questionEmail" name="email" class="ask-question__input" placeholder="your@email.com">
+                    </div>
+                    <div class="ask-question__field">
+                        <label class="ask-question__checkbox-label">
+                            <input type="checkbox" id="questionPrivacy" name="privacy" required>
+                            <span class="ask-question__checkbox-text">Я согласен с <a href="privacy-policy.html" target="_blank">политикой конфиденциальности</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="ask-question__submit">Отправить вопрос</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Prayer Request Section -->
+        <section class="prayer-request">
+            <div class="prayer-request__container">
+                <h2 class="prayer-request__title">Просьба о молитве</h2>
+                <p class="prayer-request__subtitle">Поделитесь вашими нуждами, и мы помолимся за вас</p>
+                <form class="prayer-request__form" id="prayerRequestForm">
+                    <div class="prayer-request__field">
+                        <label for="prayerName" class="prayer-request__label">Ваше имя (необязательно)</label>
+                        <input type="text" id="prayerName" name="name" class="prayer-request__input" placeholder="Ваше имя">
+                    </div>
+                    <div class="prayer-request__field">
+                        <label for="prayerRequest" class="prayer-request__label">Ваша просьба о молитве</label>
+                        <textarea id="prayerRequest" name="request" class="prayer-request__textarea" placeholder="Опишите, за что нужно помолиться..." required></textarea>
+                    </div>
+                    <div class="prayer-request__field">
+                        <label class="prayer-request__checkbox-label">
+                            <input type="checkbox" id="prayerPrivacy" name="privacy" required>
+                            <span class="prayer-request__checkbox-text">Я согласен с <a href="privacy-policy.html" target="_blank">политикой конфиденциальности</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="prayer-request__submit">Отправить просьбу</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__main">
+                <div class="footer__brand">
+                    <h3 class="footer__title">Путь к Христу</h3>
+                    <p class="footer__description">Ваше духовное путешествие начинается здесь. Мы поможем вам найти ответы на вопросы о вере и начать путь с Богом.</p>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__nav-section">
+                        <h4 class="footer__nav-title">Навигация</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="index.html" class="footer__nav-link">Главная</a></li>
+                            <li><a href="about-christ.html" class="footer__nav-link">О Христе</a></li>
+                            <li><a href="find-church.html" class="footer__nav-link">Найти церковь</a></li>
+                            <li><a href="media.html" class="footer__nav-link">Медиа</a></li>
+                            <li><a href="questions-answers.html" class="footer__nav-link">Вопросы и ответы</a></li>
+                            <li><a href="start-journey.html" class="footer__nav-link">Начать путь</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-section">
+                        <h4 class="footer__nav-title">Возрастные группы</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="gates/children.html" class="footer__nav-link">Дети (5-11 лет)</a></li>
+                            <li><a href="gates/teenagers.html" class="footer__nav-link">Подростки (12-17 лет)</a></li>
+                            <li><a href="gates/youth.html" class="footer__nav-link">Молодежь (18-30 лет)</a></li>
+                            <li><a href="gates/families.html" class="footer__nav-link">Семьи</a></li>
+                            <li><a href="gates/seniors.html" class="footer__nav-link">Старшее поколение (50+)</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-section">
+                        <h4 class="footer__nav-title">Контакты</h4>
+                        <ul class="footer__nav-list">
+                            <li>
+                                <a href="mailto:info@put-k-hristu.ru" class="footer__nav-link footer__nav-link--contact">
+                                    <span class="material-icons footer__nav-icon" aria-hidden="true">email</span>
+                                    info@put-k-hristu.ru
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+74951234567" class="footer__nav-link footer__nav-link--contact">
+                                    <span class="material-icons footer__nav-icon" aria-hidden="true">phone</span>
+                                    +7 (495) 123-45-67
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__copyright">
+                    © 2024 Путь к Христу. Все права защищены.
+                </div>
+                <div class="footer__links">
+                    <a href="privacy-policy.html" class="footer__link">Политика конфиденциальности</a>
+                    <a href="terms-of-use.html" class="footer__link">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
