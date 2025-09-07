@@ -279,26 +279,184 @@
         <section class="media-playlists">
             <div class="media-playlists__container">
                 <h2 class="media-playlists__title">Связанные подкасты</h2>
-                <div class="media-playlist">
-                    <h3 class="media-playlist__title">Популярные подкасты</h3>
-                    <ul class="media-playlist__list">
-                        <li class="media-playlist__item">
+                <div class="media-playlists__grid">
+                    <div class="media-playlist">
+                        <button class="media-playlist__header" type="button" aria-expanded="false" aria-controls="playlist-weekly">
                             <span class="material-icons">queue_music</span>
-                            <span>Проповеди на неделю (12 аудио)</span>
-                        </li>
-                        <li class="media-playlist__item">
+                            <h3 class="media-playlist__title">Проповеди на неделю</h3>
+                            <span class="media-playlist__count">12 аудио</span>
+                            <span class="material-icons media-playlist__arrow">expand_more</span>
+                        </button>
+                        <div class="media-playlist__content" id="playlist-weekly">
+                            <ul class="media-playlist__list">
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Воскресная проповедь</span>
+                                        <span class="media-playlist__item-duration">45:30</span>
+                                    </div>
+                                </li>
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Молитвенное собрание</span>
+                                        <span class="media-playlist__item-duration">32:15</span>
+                                    </div>
+                                </li>
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Библейское изучение</span>
+                                        <span class="media-playlist__item-duration">28:45</span>
+                                    </div>
+                                </li>
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Вечернее богослужение</span>
+                                        <span class="media-playlist__item-duration">38:20</span>
+                                    </div>
+                                </li>
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Молодежная встреча</span>
+                                        <span class="media-playlist__item-duration">42:10</span>
+                                    </div>
+                                </li>
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Детское служение</span>
+                                        <span class="media-playlist__item-duration">25:30</span>
+                                    </div>
+                                </li>
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Семейное изучение</span>
+                                        <span class="media-playlist__item-duration">35:45</span>
+                                    </div>
+                                </li>
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Проповедь о надежде</span>
+                                        <span class="media-playlist__item-duration">41:20</span>
+                                    </div>
+                                </li>
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Утренняя молитва</span>
+                                        <span class="media-playlist__item-duration">18:15</span>
+                                    </div>
+                                </li>
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Вечерняя молитва</span>
+                                        <span class="media-playlist__item-duration">22:30</span>
+                                    </div>
+                                </li>
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Проповедь о любви</span>
+                                        <span class="media-playlist__item-duration">39:50</span>
+                                    </div>
+                                </li>
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Библейская школа</span>
+                                        <span class="media-playlist__item-duration">48:25</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="media-playlist">
+                        <button class="media-playlist__header" type="button" aria-expanded="false" aria-controls="playlist-family">
                             <span class="material-icons">family_restroom</span>
-                            <span>Семейные размышления (8 аудио)</span>
-                        </li>
-                        <li class="media-playlist__item">
+                            <h3 class="media-playlist__title">Семейные размышления</h3>
+                            <span class="media-playlist__count">8 аудио</span>
+                            <span class="material-icons media-playlist__arrow">expand_more</span>
+                        </button>
+                        <div class="media-playlist__content" id="playlist-family">
+                            <ul class="media-playlist__list">
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Христианская семья</span>
+                                        <span class="media-playlist__item-duration">38:20</span>
+                                    </div>
+                                </li>
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Воспитание детей</span>
+                                        <span class="media-playlist__item-duration">42:10</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="media-playlist">
+                        <button class="media-playlist__header" type="button" aria-expanded="false" aria-controls="playlist-bible">
                             <span class="material-icons">school</span>
-                            <span>Библейские уроки (15 аудио)</span>
-                        </li>
-                        <li class="media-playlist__item">
+                            <h3 class="media-playlist__title">Библейские уроки</h3>
+                            <span class="media-playlist__count">15 аудио</span>
+                            <span class="material-icons media-playlist__arrow">expand_more</span>
+                        </button>
+                        <div class="media-playlist__content" id="playlist-bible">
+                            <ul class="media-playlist__list">
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Книга Бытия</span>
+                                        <span class="media-playlist__item-duration">35:45</span>
+                                    </div>
+                                </li>
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Псалмы</span>
+                                        <span class="media-playlist__item-duration">40:30</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="media-playlist">
+                        <button class="media-playlist__header" type="button" aria-expanded="false" aria-controls="playlist-hymns">
                             <span class="material-icons">music_note</span>
-                            <span>Христианские гимны (20 аудио)</span>
-                        </li>
-                    </ul>
+                            <h3 class="media-playlist__title">Христианские гимны</h3>
+                            <span class="media-playlist__count">20 аудио</span>
+                            <span class="material-icons media-playlist__arrow">expand_more</span>
+                        </button>
+                        <div class="media-playlist__content" id="playlist-hymns">
+                            <ul class="media-playlist__list">
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Аллилуйя</span>
+                                        <span class="media-playlist__item-duration">3:45</span>
+                                    </div>
+                                </li>
+                                <li class="media-playlist__item">
+                                    <span class="material-icons">audiotrack</span>
+                                    <div class="media-playlist__item-info">
+                                        <span class="media-playlist__item-title">Великий Бог</span>
+                                        <span class="media-playlist__item-duration">4:20</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

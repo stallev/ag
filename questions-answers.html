@@ -68,22 +68,6 @@
             </div>
         </section>
 
-        <!-- Smart Search Section -->
-        <section class="qa-search">
-            <div class="qa-search__container">
-                <h2 class="qa-search__title">Поиск по базе знаний</h2>
-                <form class="qa-search__form" id="qaSearchForm">
-                    <div class="qa-search__input-group">
-                        <input type="text" id="qaSearchInput" class="qa-search__input" placeholder="Введите ваш вопрос..." autocomplete="off">
-                        <button type="submit" class="qa-search__submit" aria-label="Найти ответ">
-                            <span class="material-icons">search</span>
-                        </button>
-                    </div>
-                    <div class="qa-search__suggestions" id="qaSuggestions"></div>
-                </form>
-            </div>
-        </section>
-
         <!-- Question of the Week Section -->
         <section class="question-week">
             <div class="question-week__container">
@@ -123,7 +107,7 @@
         <!-- Popular Categories Section -->
         <section class="qa-categories">
             <div class="qa-categories__container">
-                <h2 class="qa-categories__title">Популярные категории</h2>
+                <h2 class="qa-categories__title">Часто задаваемые вопросы</h2>
                 <div class="qa-categories__grid">
                     <div class="qa-category">
                         <button class="qa-category__header" type="button" aria-expanded="false" aria-controls="category-salvation">
@@ -279,25 +263,28 @@
         </section>
 
         <!-- Prayer Request Section -->
-        <section class="prayer-request">
+        <section class="prayer-request" id="prayer-request">
             <div class="prayer-request__container">
                 <h2 class="prayer-request__title">Просьба о молитве</h2>
-                <p class="prayer-request__subtitle">Поделитесь вашими нуждами, и мы помолимся за вас</p>
+                <p class="prayer-request__subtitle">Поделитесь своей нуждой, и мы помолимся за вас</p>
                 <form class="prayer-request__form" id="prayerRequestForm">
-                    <div class="prayer-request__field">
-                        <label for="prayerName" class="prayer-request__label">Ваше имя (необязательно)</label>
-                        <input type="text" id="prayerName" name="name" class="prayer-request__input" placeholder="Ваше имя">
+                    <div class="prayer-request__form-group">
+                        <label for="prayerName" class="prayer-request__label">Ваше имя</label>
+                        <input type="text" id="prayerName" name="name" class="prayer-request__input" required="" placeholder="Введите ваше имя">
                     </div>
-                    <div class="prayer-request__field">
-                        <label for="prayerRequest" class="prayer-request__label">Ваша просьба о молитве</label>
-                        <textarea id="prayerRequest" name="request" class="prayer-request__textarea" placeholder="Опишите, за что нужно помолиться..." required></textarea>
+
+                    <div class="prayer-request__form-group">
+                        <label for="prayerText" class="prayer-request__label">Ваша молитвенная нужда</label>
+                        <textarea id="prayerText" name="prayer" class="prayer-request__textarea" required="" placeholder="Опишите, за что вы просите молиться" rows="4"></textarea>
                     </div>
-                    <div class="prayer-request__field">
-                        <label class="prayer-request__checkbox-label">
-                            <input type="checkbox" id="prayerPrivacy" name="privacy" required>
-                            <span class="prayer-request__checkbox-text">Я согласен с <a href="privacy-policy.html" target="_blank">политикой конфиденциальности</a></span>
+
+                    <div class="prayer-request__form-group prayer-request__form-group--checkbox">
+                        <input type="checkbox" class="prayer-request__checkbox" id="prayerPrivacy" name="privacy" required="">
+                        <label class="prayer-request__label prayer-request__label--checkbox" for="prayerPrivacy">
+                            Я согласен на обработку персональных данных
                         </label>
                     </div>
+
                     <button type="submit" class="prayer-request__submit">Отправить просьбу</button>
                 </form>
             </div>

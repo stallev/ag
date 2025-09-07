@@ -546,7 +546,7 @@
     const allChurches = [
       {
         id: 1,
-        name: 'Церковь ЕХБ "Благодать"',
+        name: 'Церковь МСЦ ЕХБ "Благодать"',
         address: 'ул. Пушкина, 10, Москва',
         denomination: 'baptist',
         language: 'russian',
@@ -558,7 +558,7 @@
       },
       {
         id: 2,
-        name: 'Церковь ЕХБ "Мир"',
+        name: 'Церковь МСЦ ЕХБ "Мир"',
         address: 'пр. Мира, 25, Москва',
         denomination: 'baptist',
         language: 'russian',
@@ -1027,7 +1027,8 @@
       categoryHeaders.forEach(otherHeader => {
         if (otherHeader !== header) {
           otherHeader.setAttribute('aria-expanded', 'false');
-          otherHeader.nextElementSibling.classList.remove('qa-category__content--open');
+          const otherContent = otherHeader.nextElementSibling;
+          otherContent.classList.remove('qa-category__content--open');
         }
       });
       
@@ -1400,25 +1401,25 @@
     const audioToShow = filteredAudio.slice(startIndex, endIndex);
     
     audioGrid.innerHTML = audioToShow.map(audio => `
-      <article class="audio-card">
-        <div class="audio-card__image">
+      <article class="media-card">
+        <div class="media-card__image">
           <img src="https://placehold.co/300x200/8B0000/FFFFFF?text=Проповедь" alt="Обложка аудио">
-          <div class="audio-card__play-btn">
+          <div class="media-card__play-btn">
             <span class="material-icons">play_arrow</span>
           </div>
-          <div class="audio-card__duration">${audio.duration}</div>
+          <div class="media-card__duration">${audio.duration}</div>
         </div>
-        <div class="audio-card__content">
-          <h3 class="audio-card__title">${audio.title}</h3>
-          <p class="audio-card__description">${audio.description}</p>
-          <div class="audio-card__meta">
-            <span class="audio-card__pastor">${audio.pastorName}</span>
-            <span class="audio-card__date">${formatDate(audio.date)}</span>
+        <div class="media-card__content">
+          <h3 class="media-card__title">${audio.title}</h3>
+          <p class="media-card__description">${audio.description}</p>
+          <div class="media-card__meta">
+            <span class="media-card__pastor">${audio.pastorName}</span>
+            <span class="media-card__date">${formatDate(audio.date)}</span>
           </div>
-          <div class="audio-card__topics">
-            ${audio.topicNames.map(topic => `<span class="audio-card__topic">${topic}</span>`).join('')}
+          <div class="media-card__topics">
+            ${audio.topicNames.map(topic => `<span class="media-card__topic">${topic}</span>`).join('')}
           </div>
-          <a href="audio-item-page.html" class="audio-card__link">Слушать</a>
+          <a href="audio-item-page.html" class="media-card__link">Слушать</a>
         </div>
       </article>
     `).join('');
@@ -2582,3 +2583,52 @@ style.textContent = `
 document.head.appendChild(style);
 
 console.log('Gates pages functionality loaded');
+
+// =====================
+// PLAYLIST EXPANDABLE FUNCTIONALITY
+// =====================
+document.addEventListener('DOMContentLoaded', function() {
+  const playlistHeaders = document.querySelectorAll('.media-playlist__header');
+  
+  if (playlistHeaders.length === 0) {
+    setTimeout(() => {
+      const retryHeaders = document.querySelectorAll('.media-playlist__header');
+      if (retryHeaders.length > 0) {
+        initializePlaylists(retryHeaders);
+      }
+    }, 100);
+    return;
+  }
+  
+  initializePlaylists(playlistHeaders);
+});
+
+function initializePlaylists(playlistHeaders) {
+  // Обработка плейлистов
+  playlistHeaders.forEach((header, index) => {
+    header.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const content = header.nextElementSibling;
+      const isExpanded = header.getAttribute('aria-expanded') === 'true';
+      
+      // Закрываем все другие плейлисты
+      playlistHeaders.forEach(otherHeader => {
+        if (otherHeader !== header) {
+          otherHeader.setAttribute('aria-expanded', 'false');
+          const otherContent = otherHeader.nextElementSibling;
+          if (otherContent) {
+            otherContent.classList.remove('media-playlist__content--open');
+          }
+        }
+      });
+      
+      // Переключаем текущий плейлист
+      header.setAttribute('aria-expanded', !isExpanded);
+      if (content) {
+        content.classList.toggle('media-playlist__content--open');
+      }
+    });
+  });
+}
