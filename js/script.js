@@ -2632,3 +2632,406 @@ function initializePlaylists(playlistHeaders) {
     });
   });
 }
+
+// =====================
+// ABOUT US PAGE FUNCTIONALITY
+// =====================
+(function() {
+  // Проверяем, что мы на странице about-us
+  if (!document.querySelector('.hero') || !document.querySelector('.feedback__form')) {
+    return;
+  }
+
+  // =====================
+  // SMOOTH SCROLLING FOR ANCHOR LINKS
+  // =====================
+  function initSmoothScrolling() {
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    
+    anchorLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        
+        // Пропускаем пустые якоря
+        if (href === '#') return;
+        
+        const target = document.querySelector(href);
+        if (!target) return;
+        
+        e.preventDefault();
+        
+        // Закрываем мобильное меню если открыто
+        const mobileMenu = document.querySelector('.header__menu');
+        if (mobileMenu && mobileMenu.classList.contains('header__menu--open')) {
+          const closeBtn = document.querySelector('.header__menu-close');
+          if (closeBtn) closeBtn.click();
+        }
+        
+        // Плавная прокрутка
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        
+        // Обновляем URL без перезагрузки страницы
+        history.pushState(null, null, href);
+      });
+    });
+  }
+
+  // =====================
+  // FORM VALIDATION AND SUBMISSION
+  // =====================
+  function initFormHandling() {
+    const feedbackForm = document.getElementById('feedbackForm');
+    const prayerForm = document.getElementById('prayerRequestForm');
+    
+    // Обработка формы обратной связи
+    if (feedbackForm) {
+      feedbackForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        if (validateForm(this)) {
+          submitForm(this, 'feedback');
+        }
+      });
+    }
+    
+    // Обработка формы молитвенных просьб
+    if (prayerForm) {
+      prayerForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        if (validateForm(this)) {
+          submitForm(this, 'prayer');
+        }
+      });
+    }
+  }
+  
+  function validateForm(form) {
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+    
+    // Очищаем предыдущие ошибки
+    clearFormErrors(form);
+    
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        showFieldError(field, 'Это поле обязательно для заполнения');
+        isValid = false;
+      } else if (field.type === 'email' && !isValidEmail(field.value)) {
+        showFieldError(field, 'Введите корректный email адрес');
+        isValid = false;
+      }
+    });
+    
+    // Проверяем чекбокс согласия
+    const privacyCheckbox = form.querySelector('input[name="privacy"]');
+    if (privacyCheckbox && !privacyCheckbox.checked) {
+      showFieldError(privacyCheckbox, 'Необходимо согласие на обработку данных');
+      isValid = false;
+    }
+    
+    return isValid;
+  }
+  
+  function showFieldError(field, message) {
+    const formGroup = field.closest('.feedback__form-group, .prayer-request__form-group');
+    if (!formGroup) return;
+    
+    // Удаляем существующую ошибку
+    const existingError = formGroup.querySelector('.form-error');
+    if (existingError) {
+      existingError.remove();
+    }
+    
+    // Добавляем новую ошибку
+    const errorElement = document.createElement('div');
+    errorElement.className = 'form-error';
+    errorElement.textContent = message;
+    errorElement.style.cssText = `
+      color: var(--secondary);
+      font-size: var(--font-size-sm);
+      margin-top: 4px;
+    `;
+    
+    formGroup.appendChild(errorElement);
+    field.style.borderColor = 'var(--secondary)';
+    
+    // Фокус на поле с ошибкой
+    field.focus();
+  }
+  
+  function clearFormErrors(form) {
+    const errors = form.querySelectorAll('.form-error');
+    errors.forEach(error => error.remove());
+    
+    const fields = form.querySelectorAll('input, textarea, select');
+    fields.forEach(field => {
+      field.style.borderColor = '';
+    });
+  }
+  
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+  
+  function submitForm(form, type) {
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    
+    // Показываем состояние загрузки
+    submitBtn.textContent = 'Отправка...';
+    submitBtn.disabled = true;
+    
+    // Собираем данные формы
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    
+    // Имитируем отправку (в реальном проекте здесь был бы AJAX запрос)
+    setTimeout(() => {
+      // Показываем сообщение об успехе
+      showSuccessMessage(form, type);
+      
+      // Сбрасываем форму
+      form.reset();
+      
+      // Восстанавливаем кнопку
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }, 2000);
+  }
+  
+  function showSuccessMessage(form, type) {
+    const container = form.closest('.feedback__container, .prayer-request__container');
+    if (!container) return;
+    
+    const message = document.createElement('div');
+    message.className = 'success-message';
+    message.style.cssText = `
+      background: #d4edda;
+      color: #155724;
+      padding: 16px;
+      border-radius: var(--border-radius);
+      margin-bottom: 24px;
+      border: 1px solid #c3e6cb;
+      text-align: center;
+      font-weight: 500;
+    `;
+    
+    if (type === 'feedback') {
+      message.textContent = 'Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.';
+    } else if (type === 'prayer') {
+      message.textContent = 'Спасибо за вашу молитвенную просьбу. Мы помолимся за вас.';
+    }
+    
+    // Вставляем сообщение перед формой
+    form.parentNode.insertBefore(message, form);
+    
+    // Удаляем сообщение через 5 секунд
+    setTimeout(() => {
+      message.remove();
+    }, 5000);
+  }
+
+  // =====================
+  // ANIMATIONS ON SCROLL
+  // =====================
+  function initScrollAnimations() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+    
+    // Наблюдаем за элементами для анимации
+    const animatedElements = document.querySelectorAll(`
+      .target-audience__card,
+      .principles__item,
+      .team__stat,
+      .partners__item,
+      .statistics__item,
+      .how-we-work__step,
+      .contacts__method
+    `);
+    
+    animatedElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+    
+    // CSS для анимации
+    const style = document.createElement('style');
+    style.textContent = `
+      .animate-in {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  // =====================
+  // STATISTICS COUNTER ANIMATION
+  // =====================
+  function initStatisticsCounter() {
+    const statisticsItems = document.querySelectorAll('.statistics__item');
+    
+    const observerOptions = {
+      threshold: 0.5
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    statisticsItems.forEach(item => {
+      observer.observe(item);
+    });
+  }
+  
+  function animateCounter(item) {
+    const numberElement = item.querySelector('.statistics__number');
+    if (!numberElement) return;
+    
+    const finalNumber = parseInt(numberElement.textContent.replace(/\D/g, ''));
+    const suffix = numberElement.textContent.replace(/\d/g, '');
+    
+    let currentNumber = 0;
+    const increment = finalNumber / 50; // Анимация за 50 шагов
+    const duration = 2000; // 2 секунды
+    const stepTime = duration / 50;
+    
+    const timer = setInterval(() => {
+      currentNumber += increment;
+      if (currentNumber >= finalNumber) {
+        currentNumber = finalNumber;
+        clearInterval(timer);
+      }
+      numberElement.textContent = Math.floor(currentNumber) + suffix;
+    }, stepTime);
+  }
+
+  // =====================
+  // PHONE MASK
+  // =====================
+  function initPhoneMask() {
+    const phoneInputs = document.querySelectorAll('input[type="tel"], input[name*="phone"]');
+    
+    phoneInputs.forEach(input => {
+      input.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        
+        if (value.length > 0) {
+          if (value.length <= 1) {
+            value = `+7 (${value}`;
+          } else if (value.length <= 4) {
+            value = `+7 (${value.slice(1)}`;
+          } else if (value.length <= 7) {
+            value = `+7 (${value.slice(1, 4)}) ${value.slice(4)}`;
+          } else if (value.length <= 9) {
+            value = `+7 (${value.slice(1, 4)}) ${value.slice(4, 7)}-${value.slice(7)}`;
+          } else {
+            value = `+7 (${value.slice(1, 4)}) ${value.slice(4, 7)}-${value.slice(7, 9)}-${value.slice(9, 11)}`;
+          }
+        }
+        
+        e.target.value = value;
+      });
+      
+      input.addEventListener('keydown', function(e) {
+        // Разрешаем: backspace, delete, tab, escape, enter
+        if ([8, 9, 27, 13, 46].indexOf(e.keyCode) !== -1 ||
+            // Разрешаем: Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
+            (e.keyCode === 65 && e.ctrlKey === true) ||
+            (e.keyCode === 67 && e.ctrlKey === true) ||
+            (e.keyCode === 86 && e.ctrlKey === true) ||
+            (e.keyCode === 88 && e.ctrlKey === true)) {
+          return;
+        }
+        // Разрешаем только цифры
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+          e.preventDefault();
+        }
+      });
+    });
+  }
+
+  // =====================
+  // ACCESSIBILITY ENHANCEMENTS
+  // =====================
+  function initAccessibility() {
+    // Добавляем ARIA-live регион для уведомлений
+    const liveRegion = document.createElement('div');
+    liveRegion.setAttribute('aria-live', 'polite');
+    liveRegion.setAttribute('aria-atomic', 'true');
+    liveRegion.style.cssText = `
+      position: absolute;
+      left: -10000px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    `;
+    document.body.appendChild(liveRegion);
+    
+    // Функция для объявления сообщений
+    window.announceToScreenReader = function(message) {
+      liveRegion.textContent = message;
+      setTimeout(() => {
+        liveRegion.textContent = '';
+      }, 1000);
+    };
+    
+    // Улучшаем навигацию с клавиатуры
+    const focusableElements = document.querySelectorAll(`
+      a[href], button, input, textarea, select, [tabindex]:not([tabindex="-1"])
+    `);
+    
+    focusableElements.forEach(element => {
+      element.addEventListener('focus', function() {
+        this.style.outline = '2px solid var(--primary)';
+        this.style.outlineOffset = '2px';
+      });
+      
+      element.addEventListener('blur', function() {
+        this.style.outline = '';
+        this.style.outlineOffset = '';
+      });
+    });
+  }
+
+  // =====================
+  // INITIALIZATION
+  // =====================
+  function init() {
+    initSmoothScrolling();
+    initFormHandling();
+    initScrollAnimations();
+    initStatisticsCounter();
+    initPhoneMask();
+    initAccessibility();
+  }
+  
+  // Запускаем инициализацию после загрузки DOM
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
