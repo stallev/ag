@@ -739,15 +739,16 @@ button.header__menu-link--submenu {
 }
 
 .gates__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .gates__card {
   background-color: var(--background);
   border-radius: var(--border-radius);
-  padding: 24px;
+  padding: 8px 12px;
   text-align: center;
   cursor: pointer;
   transition: var(--transition);
@@ -757,6 +758,8 @@ button.header__menu-link--submenu {
   text-decoration: none;
   color: inherit;
   display: block;
+  flex: 1;
+  min-width: calc(50% - 4px);
 }
 
 .gates__card::before {
@@ -812,30 +815,52 @@ button.header__menu-link--submenu {
 }
 
 .gates__icon {
-  font-size: 48px;
-  color: var(--primary);
-  margin-bottom: 16px;
-  display: block;
+  display: none;
 }
 
 .gates__card-title {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-sm);
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 0;
   color: var(--text-dark);
+  line-height: 1.2;
 }
 
 .gates__card-description {
-  font-size: var(--font-size-sm);
-  color: var(--text-light);
-  line-height: 1.5;
+  display: none;
 }
 
 /* Gates Media Queries */
 @media (min-width: 768px) {
   .gates__grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+  }
+  
+  .gates__card {
+    padding: 24px;
+    flex: none;
+    min-width: auto;
+  }
+  
+  .gates__icon {
+    display: block;
+    font-size: 48px;
+    color: var(--primary);
+    margin-bottom: 16px;
+  }
+  
+  .gates__card-title {
+    font-size: var(--font-size-lg);
+    margin-bottom: 8px;
+  }
+  
+  .gates__card-description {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--text-light);
+    line-height: 1.5;
   }
 }
 
@@ -6823,26 +6848,35 @@ textarea:focus {
 }
 
 .gates-hero__title {
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-xl);
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 
 .gates-hero__subtitle {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-base);
   font-weight: 500;
   margin-bottom: 1.5rem;
   opacity: 0.9;
 }
 
 .gates-hero__description {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-sm);
   margin-bottom: 2rem;
-  max-width: 600px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.7;
+  line-height: 1.8;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .gates-hero__description {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .gates-hero__cta {
@@ -6919,9 +6953,32 @@ textarea:focus {
   }
   
   .gates-hero__title {
-    font-size: 3.5rem;
+    font-size: var(--font-size-2xl);
+  }
+  
+  .gates-hero__subtitle {
+    font-size: var(--font-size-lg);
+  }
+  
+  .gates-hero__description {
+    font-size: var(--font-size-base);
   }
 }
+
+@media (min-width: 1024px) {
+  .gates-hero__title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .gates-hero__subtitle {
+    font-size: var(--font-size-xl);
+  }
+  
+  .gates-hero__description {
+    font-size: var(--font-size-lg);
+  }
+}
+
 
 /* Gates Content Section */
 .gates-content {
@@ -6936,7 +6993,7 @@ textarea:focus {
 }
 
 .gates-content__title {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-lg);
   font-weight: 700;
   text-align: center;
   margin-bottom: 1rem;
@@ -6944,10 +7001,13 @@ textarea:focus {
 }
 
 .gates-content__subtitle {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-sm);
   text-align: center;
   margin-bottom: 2rem;
   color: var(--text-light);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .gates-content__filters {
@@ -7088,11 +7148,28 @@ textarea:focus {
   .gates-content__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+  .gates-content__title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .gates-content__subtitle {
+    font-size: var(--font-size-base);
+  }
 }
+
 
 @media (min-width: 1024px) {
   .gates-content__grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .gates-content__title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .gates-content__subtitle {
+    font-size: var(--font-size-lg);
   }
 }
 
@@ -7109,7 +7186,7 @@ textarea:focus {
 }
 
 .gates-growth__title {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-lg);
   font-weight: 700;
   text-align: center;
   margin-bottom: 1rem;
@@ -7117,7 +7194,7 @@ textarea:focus {
 }
 
 .gates-growth__subtitle {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-sm);
   text-align: center;
   margin-bottom: 3rem;
   color: var(--text-light);
@@ -7194,14 +7271,17 @@ textarea:focus {
 
 .gates-growth__item-example {
   background-color: white;
-  padding: 1rem;
+  padding: 1.25rem;
   border-radius: var(--border-radius);
   border-left: 4px solid var(--secondary);
   font-size: var(--font-size-sm);
+  box-shadow: var(--shadow-sm);
+  margin-top: 0.5rem;
 }
 
 .gates-growth__item-example strong {
   color: var(--primary);
+  font-weight: 600;
 }
 
 @media (min-width: 768px) {
@@ -7217,7 +7297,26 @@ textarea:focus {
   .gates-growth__item-icon .material-icons {
     font-size: 2rem;
   }
+  
+  .gates-growth__title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .gates-growth__subtitle {
+    font-size: var(--font-size-base);
+  }
 }
+
+@media (min-width: 1024px) {
+  .gates-growth__title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .gates-growth__subtitle {
+    font-size: var(--font-size-lg);
+  }
+}
+
 
 /* Gates Player Section */
 .gates-player {
@@ -7690,7 +7789,7 @@ textarea:focus {
 }
 
 .gates-church-map__title {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-lg);
   font-weight: 700;
   text-align: center;
   margin-bottom: 1rem;
@@ -7698,11 +7797,14 @@ textarea:focus {
 }
 
 .gates-church-map__description {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-sm);
   text-align: center;
   margin-bottom: 2rem;
   color: var(--text-light);
-  line-height: 1.6;
+  line-height: 1.7;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .gates-church-map__map {
@@ -7755,7 +7857,26 @@ textarea:focus {
   .gates-church-map__features {
     grid-template-columns: repeat(3, 1fr);
   }
+  
+  .gates-church-map__title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .gates-church-map__description {
+    font-size: var(--font-size-base);
+  }
 }
+
+@media (min-width: 1024px) {
+  .gates-church-map__title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .gates-church-map__description {
+    font-size: var(--font-size-lg);
+  }
+}
+
 
 /* Gates Prayer Request Section */
 .gates-prayer-request {
@@ -7876,18 +7997,18 @@ textarea:focus {
 }
 
 .gates-cta__title {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-lg);
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .gates-cta__description {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-sm);
   margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.6;
+  line-height: 1.7;
   opacity: 0.9;
 }
 
@@ -7941,7 +8062,26 @@ textarea:focus {
     flex-direction: row;
     justify-content: center;
   }
+  
+  .gates-cta__title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .gates-cta__description {
+    font-size: var(--font-size-base);
+  }
 }
+
+@media (min-width: 1024px) {
+  .gates-cta__title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .gates-cta__description {
+    font-size: var(--font-size-lg);
+  }
+}
+
 
 /* =====================
    VIDEO ITEM PAGE STYLES

@@ -3035,3 +3035,387 @@ function initializePlaylists(playlistHeaders) {
     init();
   }
 })();
+
+// Enhanced Gates Functionality for Updated Content
+(function() {
+  'use strict';
+
+  // =====================
+  // ENHANCED GATES CONTENT FILTERING
+  // =====================
+  function initEnhancedContentFiltering() {
+    const contentFilters = document.querySelectorAll('.gates-content__filter');
+    const contentCards = document.querySelectorAll('.gates-content__card');
+    
+    if (!contentFilters.length || !contentCards.length) return;
+    
+    // Добавляем анимацию при фильтрации
+    function filterContentWithAnimation(type) {
+      contentCards.forEach((card, index) => {
+        const cardType = card.getAttribute('data-type');
+        const shouldShow = type === 'all' || cardType === type;
+        
+        // Добавляем задержку для анимации
+        setTimeout(() => {
+          if (shouldShow) {
+            card.style.display = 'block';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            
+            // Анимация появления
+            requestAnimationFrame(() => {
+              card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            });
+          } else {
+            card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(-20px)';
+            
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        }, index * 50); // Задержка для каскадного эффекта
+      });
+    }
+    
+    contentFilters.forEach(filter => {
+      filter.addEventListener('click', function() {
+        // Убираем активный класс со всех фильтров
+        contentFilters.forEach(f => f.classList.remove('gates-content__filter--active'));
+        
+        // Добавляем активный класс к текущему фильтру
+        this.classList.add('gates-content__filter--active');
+        
+        // Фильтруем контент с анимацией
+        const filterType = this.getAttribute('data-type');
+        filterContentWithAnimation(filterType);
+        
+        // Обновляем ARIA-атрибуты для доступности
+        contentFilters.forEach(f => {
+          f.setAttribute('aria-pressed', f === this ? 'true' : 'false');
+        });
+      });
+    });
+  }
+
+  // =====================
+  // ENHANCED GROWTH TIMELINE
+  // =====================
+  function initEnhancedGrowthTimeline() {
+    const growthItems = document.querySelectorAll('.gates-growth__item');
+    
+    if (!growthItems.length) return;
+    
+    // Создаем интерактивную временную линию
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const item = entry.target;
+          const index = Array.from(growthItems).indexOf(item);
+          
+          // Анимация появления с задержкой
+          setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateX(0)';
+            
+            // Добавляем эффект "завершения" для первого элемента
+            if (index === 0) {
+              item.classList.add('gates-growth__item--completed');
+            }
+          }, index * 200);
+        }
+      });
+    }, { threshold: 0.3 });
+    
+    growthItems.forEach((item, index) => {
+      // Начальное состояние
+      item.style.opacity = '0';
+      item.style.transform = 'translateX(-30px)';
+      item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      
+      observer.observe(item);
+      
+      // Добавляем интерактивность при клике
+      item.addEventListener('click', function() {
+        // Переключаем состояние "завершено"
+        this.classList.toggle('gates-growth__item--completed');
+        
+        // Обновляем ARIA-атрибуты
+        const isCompleted = this.classList.contains('gates-growth__item--completed');
+        this.setAttribute('aria-expanded', isCompleted.toString());
+        
+        // Анимация изменения
+        this.style.transform = 'scale(1.02)';
+        setTimeout(() => {
+          this.style.transform = 'scale(1)';
+        }, 150);
+      });
+    });
+  }
+
+  // =====================
+  // ENHANCED CHURCH MAP INTERACTION
+  // =====================
+  function initEnhancedChurchMap() {
+    const mapPlaceholders = document.querySelectorAll('.gates-church-map__placeholder');
+    
+    if (!mapPlaceholders.length) return;
+    
+    mapPlaceholders.forEach(placeholder => {
+      // Добавляем интерактивность
+      placeholder.style.cursor = 'pointer';
+      placeholder.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+      
+      placeholder.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.02)';
+        this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+      });
+      
+      placeholder.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+        this.style.boxShadow = '';
+      });
+      
+      placeholder.addEventListener('click', function() {
+        // Анимация клика
+        this.style.transform = 'scale(0.98)';
+        setTimeout(() => {
+          this.style.transform = 'scale(1.02)';
+        }, 100);
+        
+        // Симуляция загрузки карты
+        const originalContent = this.innerHTML;
+        this.innerHTML = `
+          <span class="material-icons" aria-hidden="true">refresh</span>
+          <p>Загружаем карту церквей...</p>
+        `;
+        
+        setTimeout(() => {
+          this.innerHTML = `
+            <span class="material-icons" aria-hidden="true">location_on</span>
+            <p>Карта церквей загружена</p>
+            <p>Нажмите на маркер для получения информации</p>
+          `;
+        }, 2000);
+        
+        // Обновляем ARIA-атрибуты
+        this.setAttribute('aria-label', 'Интерактивная карта церквей МСЦ ЕХБ');
+      });
+    });
+  }
+
+  // =====================
+  // ENHANCED TESTIMONIALS CAROUSEL
+  // =====================
+  function initEnhancedTestimonials() {
+    const testimonialsItems = document.querySelectorAll('.gates-testimonials__item');
+    const prevBtn = document.querySelector('.gates-testimonials__prev');
+    const nextBtn = document.querySelector('.gates-testimonials__next');
+    
+    if (!testimonialsItems.length || !prevBtn || !nextBtn) return;
+    
+    let currentIndex = 0;
+    let isAnimating = false;
+    
+    function showTestimonial(index) {
+      if (isAnimating) return;
+      isAnimating = true;
+      
+      testimonialsItems.forEach((item, i) => {
+        const isActive = i === index;
+        item.classList.toggle('gates-testimonials__item--active', isActive);
+        
+        // Анимация перехода
+        if (isActive) {
+          item.style.opacity = '0';
+          item.style.transform = 'translateX(30px)';
+          
+          requestAnimationFrame(() => {
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            item.style.opacity = '1';
+            item.style.transform = 'translateX(0)';
+          });
+        } else {
+          item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+          item.style.opacity = '0';
+          item.style.transform = 'translateX(-30px)';
+        }
+      });
+      
+      // Обновляем ARIA-атрибуты
+      testimonialsItems.forEach((item, i) => {
+        item.setAttribute('aria-hidden', i !== index ? 'true' : 'false');
+      });
+      
+      setTimeout(() => {
+        isAnimating = false;
+      }, 500);
+    }
+    
+    function nextTestimonial() {
+      currentIndex = (currentIndex + 1) % testimonialsItems.length;
+      showTestimonial(currentIndex);
+    }
+    
+    function prevTestimonial() {
+      currentIndex = (currentIndex - 1 + testimonialsItems.length) % testimonialsItems.length;
+      showTestimonial(currentIndex);
+    }
+    
+    // Обработчики событий
+    nextBtn.addEventListener('click', nextTestimonial);
+    prevBtn.addEventListener('click', prevTestimonial);
+    
+    // Автоматическое переключение
+    let autoPlayInterval = setInterval(nextTestimonial, 5000);
+    
+    // Останавливаем автопрокрутку при взаимодействии
+    [prevBtn, nextBtn].forEach(btn => {
+      btn.addEventListener('click', () => {
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = setInterval(nextTestimonial, 5000);
+      });
+    });
+    
+    // Инициализация
+    showTestimonial(0);
+  }
+
+  // =====================
+  // ENHANCED FORM VALIDATION
+  // =====================
+  function initEnhancedFormValidation() {
+    const forms = document.querySelectorAll('.gates-ask-pastor__form, .gates-prayer-request__form');
+    
+    forms.forEach(form => {
+      const inputs = form.querySelectorAll('input, textarea, select');
+      
+      inputs.forEach(input => {
+        // Валидация в реальном времени
+        input.addEventListener('blur', function() {
+          validateField(this);
+        });
+        
+        input.addEventListener('input', function() {
+          // Убираем ошибку при вводе
+          if (this.classList.contains('error')) {
+            this.classList.remove('error');
+            const errorMsg = this.parentNode.querySelector('.error-message');
+            if (errorMsg) {
+              errorMsg.remove();
+            }
+          }
+        });
+      });
+      
+      // Валидация при отправке формы
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        let isValid = true;
+        inputs.forEach(input => {
+          if (!validateField(input)) {
+            isValid = false;
+          }
+        });
+        
+        if (isValid) {
+          // Симуляция отправки
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const originalText = submitBtn.textContent;
+          
+          submitBtn.textContent = 'Отправляем...';
+          submitBtn.disabled = true;
+          
+          setTimeout(() => {
+            submitBtn.textContent = 'Отправлено!';
+            submitBtn.style.backgroundColor = '#4CAF50';
+            
+            setTimeout(() => {
+              submitBtn.textContent = originalText;
+              submitBtn.disabled = false;
+              submitBtn.style.backgroundColor = '';
+              form.reset();
+            }, 2000);
+          }, 1500);
+        }
+      });
+    });
+    
+    function validateField(field) {
+      const value = field.value.trim();
+      const isRequired = field.hasAttribute('required');
+      const type = field.type;
+      
+      let isValid = true;
+      let errorMessage = '';
+      
+      if (isRequired && !value) {
+        isValid = false;
+        errorMessage = 'Это поле обязательно для заполнения';
+      } else if (type === 'email' && value && !isValidEmail(value)) {
+        isValid = false;
+        errorMessage = 'Введите корректный email адрес';
+      } else if (type === 'tel' && value && !isValidPhone(value)) {
+        isValid = false;
+        errorMessage = 'Введите корректный номер телефона';
+      }
+      
+      if (!isValid) {
+        field.classList.add('error');
+        showFieldError(field, errorMessage);
+      }
+      
+      return isValid;
+    }
+    
+    function showFieldError(field, message) {
+      // Убираем существующее сообщение об ошибке
+      const existingError = field.parentNode.querySelector('.error-message');
+      if (existingError) {
+        existingError.remove();
+      }
+      
+      // Добавляем новое сообщение об ошибке
+      const errorDiv = document.createElement('div');
+      errorDiv.className = 'error-message';
+      errorDiv.textContent = message;
+      errorDiv.style.color = '#FF0000';
+      errorDiv.style.fontSize = '0.875rem';
+      errorDiv.style.marginTop = '0.25rem';
+      
+      field.parentNode.appendChild(errorDiv);
+    }
+    
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+    
+    function isValidPhone(phone) {
+      const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+      return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''));
+    }
+  }
+
+  // =====================
+  // INITIALIZATION
+  // =====================
+  function init() {
+    initEnhancedContentFiltering();
+    initEnhancedGrowthTimeline();
+    initEnhancedChurchMap();
+    initEnhancedTestimonials();
+    initEnhancedFormValidation();
+  }
+  
+  // Запускаем инициализацию после загрузки DOM
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
