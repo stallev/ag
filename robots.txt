@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# Указываем путь к sitemap (если нужен)
+# Sitemap: https://a1.stallevs.ru/sitemap.xml
