@@ -1,3 +1,6 @@
+---
+alwaysApply: true
+---
 # Руководство по разработке
 
 ## Введение
@@ -139,7 +142,6 @@
 ## 7. Повторное использование кода из /example
 
 ### Можно адаптировать:
-- Запрещено редактирование файлов из /example.
 - Шапка и навигация: Блок .header, .header__container, .header__nav, .header__menu (см. /example/index.html, /example/styles.css).
 - Футер: Блок .footer, .footer__container, .footer__main, .footer__nav (см. /example/index.html).
 - Формы: Блоки .feedback-form, .contacts-form (см. /example/contacts.html, /example/styles.css).
