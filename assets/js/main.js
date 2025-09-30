@@ -347,22 +347,70 @@
 // АНИМАЦИИ ПОЯВЛЕНИЯ
 // =====================
 (function() {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-    
-  const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
-        }
-      });
-    }, observerOptions);
-    
-  document.querySelectorAll('.animate-on-scroll').forEach(el => {
-      observer.observe(el);
+  // Проверяем, поддерживается ли IntersectionObserver
+  if (!('IntersectionObserver' in window)) {
+    // Если не поддерживается, показываем все элементы сразу
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      el.classList.add('animate-in');
     });
+    return;
+  }
+  
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+        // Отключаем наблюдение для этого элемента после анимации
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  
+  // Находим все элементы с анимацией
+  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+  
+  if (animatedElements.length === 0) {
+    return;
+  }
+  
+  // Добавляем элементы в observer
+  animatedElements.forEach(el => {
+    observer.observe(el);
+  });
+  
+  // Дополнительная проверка через 1 секунду для элементов, которые могли не попасть в область видимости
+  setTimeout(() => {
+    animatedElements.forEach(el => {
+      if (!el.classList.contains('animate-in')) {
+        el.classList.add('animate-in');
+      }
+    });
+  }, 1000);
+  
+  // Еще одна проверка через 3 секунды как fallback
+  setTimeout(() => {
+    animatedElements.forEach(el => {
+      if (!el.classList.contains('animate-in')) {
+        el.classList.add('animate-in');
+        el.classList.add('no-animation');
+      }
+    });
+  }, 3000);
+  
+  // Специальная обработка для страницы about
+  if (document.body.classList.contains('about-page')) {
+    // Принудительно показываем все элементы на странице about
+    animatedElements.forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+      el.classList.add('animate-in');
+    });
+  }
 })();
 
   // =====================

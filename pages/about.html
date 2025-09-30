@@ -23,7 +23,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="about-page">
   <!-- Skip link для доступности -->
   <a href="#main" class="skip-link"></a>
   
@@ -104,9 +104,9 @@
     <!-- Mission section -->
     <section class="mission">
       <div class="container">
-        <h2 class="mission__title heading-2 heading--center heading--spaced-lg animate-on-scroll">Наша миссия</h2>
+        <h2 class="mission__title heading-2 heading--center heading--spaced-lg">Наша миссия</h2>
         <div class="mission__content">
-          <blockquote class="animate-on-scroll">
+          <blockquote class="mission__quote">
             <p>"Величие Бога низводит нас до праха, а затем поднимает до небес."</p>
             <cite>— А.У. Тозер, "Познание Святого"</cite>
           </blockquote>
@@ -121,6 +121,44 @@
               То, что мы думаем о Боге, определяет то, как мы живем, как мы относимся к себе и другим, 
               как мы справляемся со страданиями и как мы поклоняемся.
             </p>
+            <p class="text-large text-large--spaced">
+              Поверхностное или искаженное знание о Боге неизбежно ведет к поверхностной и искаженной христианской жизни.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Philosophy section -->
+    <section class="philosophy">
+      <div class="container">
+        <h2 class="philosophy__title heading-2 heading--center heading--spaced-lg">Наши принципы</h2>
+        <div class="philosophy__grid">
+          <div class="philosophy__card">
+            <div class="philosophy__icon">🎯</div>
+            <h3 class="philosophy__card-title heading-3 heading--primary">Богоцентричность</h3>
+            <p class="philosophy__card-text text-description text-description--spaced">
+              Всё начинается и заканчивается в Боге. Мы сознательно смещаем фокус с человека на Бога, 
+              помогая увидеть Его величие, святость, суверенность и любовь.
+            </p>
+          </div>
+          
+          <div class="philosophy__card">
+            <div class="philosophy__icon">📚</div>
+            <h3 class="philosophy__card-title heading-3 heading--primary">Интегрированное ученичество</h3>
+            <p class="philosophy__card-text text-description text-description--spaced">
+              Глубокое богословие доступно каждому верующему. Мы предлагаем истину в разных форматах: 
+              читать, смотреть, слушать — чтобы достигать и ума, и сердца.
+            </p>
+          </div>
+          
+          <div class="philosophy__card">
+            <div class="philosophy__icon">✨</div>
+            <h3 class="philosophy__card-title heading-3 heading--primary">Преображение</h3>
+            <p class="philosophy__card-text text-description text-description--spaced">
+              От основания к применению. Наша цель — не информирование, а преображение через 
+              правильное знание о Боге, которое ведет к поклонению и послушанию.
+            </p>
           </div>
         </div>
       </div>
@@ -129,44 +167,41 @@
     <!-- Doctrinal foundations -->
     <section class="doctrinal-foundations">
       <div class="container">
-        <h2 class="doctrinal-foundations__title heading-2 heading--center heading--spaced-lg animate-on-scroll">Доктринальные основы</h2>
-        <div class="doctrinal-foundations__grid">
-          <article class="doctrinal-card animate-on-scroll">
-            <h3 class="doctrinal-card__title heading-3 heading--primary">Священное Писание</h3>
-            <p class="doctrinal-card__text text-description">
-              Библия является единственным непогрешимым правилом веры и жизни, 
-              достаточным для спасения и благочестия.
-            </p>
-          </article>
-          
-          <article class="doctrinal-card animate-on-scroll">
-            <h3 class="doctrinal-card__title heading-3 heading--primary">Бог</h3>
-            <p class="doctrinal-card__text text-description">
-              Единственный истинный Бог существует в трех лицах: Отец, Сын и Святой Дух. 
-              Он вечен, всемогущ, всеведущ и неизменен.
-            </p>
-          </article>
-          
-          <article class="doctrinal-card animate-on-scroll">
-            <h3 class="doctrinal-card__title heading-3 heading--primary">Спасение</h3>
-            <p class="doctrinal-card__text text-description">
-              Спасение — это дар Божий по благодати через веру в Иисуса Христа, 
-              а не результат человеческих дел или заслуг.
-            </p>
-          </article>
-          
-          <article class="doctrinal-card">
-            <h3 class="doctrinal-card__title heading-3 heading--primary">Церковь</h3>
-            <p class="doctrinal-card__text text-description">
-              Вселенская церковь состоит из всех истинно верующих во все времена, 
-              объединенных во Христе как главе.
-            </p>
-          </article>
+        <h2 class="doctrinal-foundations__title heading-2 heading--center heading--spaced-lg">Доктринальные основы</h2>
+        <div class="doctrinal-foundations__content">
+          <p class="doctrinal-foundations__intro text-large text-large--spaced">
+            Наш проект основан на библейских истинах, которые формируют основу христианской веры:
+          </p>
+          <div class="doctrinal-foundations__grid">
+            <div class="doctrinal-foundations__item">
+              <h4 class="doctrinal-foundations__item-title heading-4 heading--primary">Священное Писание</h4>
+              <p class="doctrinal-foundations__item-text text-description">
+                Библия — единственный непогрешимый источник божественного откровения и высший авторитет в вопросах веры и жизни.
+              </p>
+            </div>
+            
+            <div class="doctrinal-foundations__item">
+              <h4 class="doctrinal-foundations__item-title heading-4 heading--primary">Триединый Бог</h4>
+              <p class="doctrinal-foundations__item-text text-description">
+                Единый Бог существует в трех Лицах: Отец, Сын и Святой Дух — равные по сущности, но различные по ролям.
+              </p>
+            </div>
+            
+            <div class="doctrinal-foundations__item">
+              <h4 class="doctrinal-foundations__item-title heading-4 heading--primary">Спасение по благодати</h4>
+              <p class="doctrinal-foundations__item-text text-description">
+                Спасение — дар Божий, получаемый только по благодати через веру в Иисуса Христа, а не по делам.
+              </p>
+            </div>
+            
+            <div class="doctrinal-foundations__item">
+              <h4 class="doctrinal-foundations__item-title heading-4 heading--primary">Церковь</h4>
+              <p class="doctrinal-foundations__item-text text-description">
+                Церковь — тело Христово, состоящее из всех истинно верующих, призванных к святости и служению.
+              </p>
+            </div>
+          </div>
         </div>
-        <p class="doctrinal-foundations__note">
-          Все материалы соответствуют учению Священного Писания и 
-          <a href="#" class="doctrinal-foundations__link">Лондонскому исповеданию веры 1689 года</a>.
-        </p>
       </div>
     </section>
     
@@ -180,7 +215,7 @@
               <p>
                 Проект «Познание Бога» создан пастором, который посвятил свою жизнь 
                 изучению и проповеди Слова Божьего. Основываясь на трудах таких 
-                богословов как А.У. Тозер, Джон Снайдер и другие реформатские авторы, 
+                богословов как А.У. Тозер, Джон Снайдер и других, 
                 автор стремится сделать глубокое богословие доступным каждому верующему.
               </p>
               <p>
@@ -189,16 +224,25 @@
               </p>
             </div>
           </div>
-          
-          <div class="about-author__support">
-            <h3 class="about-author__support-title heading-3 heading--primary">Поддержка проекта</h3>
-            <p class="about-author__support-text">
+        </div>
+      </div>
+    </section>
+    
+    <!-- Support section -->
+    <section class="support">
+      <div class="container">
+        <div class="support__content">
+          <h2 class="support__title heading-2 heading--center heading--spaced-lg">Поддержка проекта</h2>
+          <div class="support__card">
+            <div class="support__icon">🙏</div>
+            <h3 class="support__card-title heading-3 heading--primary">Присоединяйтесь к миссии</h3>
+            <p class="support__card-text text-large text-large--spaced">
               Если этот проект благословляет вашу жизнь, рассмотрите возможность 
               поддержать нас молитвой и, если возможно, материально. 
               Ваша поддержка поможет нам создавать больше качественного контента 
               для духовного роста верующих.
             </p>
-            <div class="about-author__actions">
+            <div class="support__actions">
               <a href="#" class="btn">Связаться с нами</a>
               <a href="#" class="btn btn--secondary">Поддержать проект</a>
             </div>
