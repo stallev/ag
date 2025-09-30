@@ -3,12 +3,40 @@
 // =====================
 (function() {
   const mobileMenuBtn = document.querySelector('.header__mobile-menu-btn');
-  const mobileMenu = document.querySelector('.header__menu');
+  const mobileMenu = document.querySelector('.header__nav');
   const menuOverlay = document.querySelector('.header__menu-overlay');
   const menuCloseBtn = document.querySelector('.header__menu-close');
   const menuLinks = document.querySelectorAll('.header__menu-link');
   
-  if (!mobileMenuBtn || !mobileMenu || !menuOverlay || !menuCloseBtn) return;
+  if (!mobileMenuBtn || !mobileMenu || !menuOverlay || !menuCloseBtn) {
+    return;
+  }
+  
+  // Проверяем, нужно ли показывать мобильное меню
+  function shouldShowMobileMenu() {
+    return window.innerWidth < 1024;
+  }
+  
+  // Скрываем/показываем кнопку меню в зависимости от размера экрана
+  function updateMobileMenuVisibility() {
+    if (shouldShowMobileMenu()) {
+      mobileMenuBtn.style.display = 'block';
+    } else {
+      mobileMenuBtn.style.display = 'none';
+      closeMenu(); // Закрываем меню при переходе на десктоп
+      // Сбрасываем все состояния меню при переходе на десктоп
+      mobileMenu.classList.remove('header__menu--open');
+      menuOverlay.classList.remove('header__menu-overlay--open');
+      mobileMenuBtn.classList.remove('header__mobile-menu-btn--open');
+      document.body.style.overflow = '';
+    }
+  }
+  
+  // Инициализация
+  updateMobileMenuVisibility();
+  
+  // Обновляем при изменении размера окна
+  window.addEventListener('resize', updateMobileMenuVisibility);
   
   let isMenuOpen = false;
   
@@ -28,6 +56,13 @@
     }
   }
   
+  // Добавляем обработчик для отладки
+  mobileMenuBtn.addEventListener('click', function(e) {
+    console.log('Mobile menu button clicked');
+    e.preventDefault();
+    toggleMenu();
+  });
+  
   function closeMenu() {
     if (isMenuOpen) {
       isMenuOpen = false;
@@ -40,12 +75,15 @@
     }
   }
   
-  mobileMenuBtn.addEventListener('click', toggleMenu);
   menuCloseBtn.addEventListener('click', closeMenu);
   menuOverlay.addEventListener('click', closeMenu);
   
+  // Закрываем меню только при клике на обычные ссылки (не подменю)
   menuLinks.forEach(link => {
-    link.addEventListener('click', closeMenu);
+    // Исключаем ссылки с подменю из автоматического закрытия
+    if (!link.classList.contains('header__menu-link--dropdown')) {
+      link.addEventListener('click', closeMenu);
+    }
   });
   
   document.addEventListener('keydown', function(e) {
@@ -53,24 +91,70 @@
       closeMenu();
     }
   });
-})();
-
-// =====================
-// ПЛАВНЫЙ СКРОЛЛ
-// =====================
-(function() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
+  
+  // =====================
+  // УПРАВЛЕНИЕ ПОДМЕНЮ В МОБИЛЬНОЙ ВЕРСИИ
+  // =====================
+  const dropdownLinks = document.querySelectorAll('.header__menu-link--dropdown');
+  const submenus = document.querySelectorAll('.header__submenu');
+  
+  dropdownLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      // Проверяем, находимся ли мы в мобильной версии
+      if (shouldShowMobileMenu()) {
+        e.preventDefault();
+        
+        const parentItem = this.closest('.header__menu-item--has-submenu');
+        const submenu = parentItem.querySelector('.header__submenu');
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        // Закрываем все другие подменю
+        dropdownLinks.forEach(otherLink => {
+          if (otherLink !== this) {
+            otherLink.setAttribute('aria-expanded', 'false');
+            const otherParent = otherLink.closest('.header__menu-item--has-submenu');
+            const otherSubmenu = otherParent.querySelector('.header__submenu');
+            if (otherSubmenu) {
+              otherSubmenu.style.display = 'none';
+            }
+          }
         });
+        
+        // Переключаем текущее подменю
+        if (isExpanded) {
+          this.setAttribute('aria-expanded', 'false');
+          submenu.style.display = 'none';
+        } else {
+          this.setAttribute('aria-expanded', 'true');
+          submenu.style.display = 'block';
+        }
       }
+      // На десктопе не предотвращаем переход по ссылке
     });
   });
+  
+  // Закрываем все подменю при закрытии основного меню
+  function closeAllSubmenus() {
+    dropdownLinks.forEach(link => {
+      link.setAttribute('aria-expanded', 'false');
+    });
+    submenus.forEach(submenu => {
+      submenu.style.display = 'none';
+    });
+  }
+  
+  // Добавляем обработчики для ссылок подменю
+  const submenuLinks = document.querySelectorAll('.header__submenu-link');
+  submenuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  
+  // Обновляем функцию closeMenu
+  const originalCloseMenu = closeMenu;
+  closeMenu = function() {
+    originalCloseMenu();
+    closeAllSubmenus();
+  };
 })();
 
 // =====================
