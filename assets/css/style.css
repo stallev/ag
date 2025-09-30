@@ -728,129 +728,6 @@ legend {
   margin-bottom: 1rem;
 }
 
-/* =====================
-   CARD COMPONENT
-   ===================== */
-.card {
-  background: white;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
-  transition: var(--transition);
-  border: 1px solid #E9ECEF;
-}
-
-.card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
-}
-
-.card--hidden {
-  display: none !important;
-}
-
-.card-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
-
-.card-link:hover {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-.card-image-wrapper {
-  position: relative;
-  aspect-ratio: 16/9;
-  overflow: hidden;
-}
-
-.card-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card-format-icon {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 4px 8px;
-  border-radius: var(--border-radius);
-  font-size: var(--font-size-sm);
-}
-
-.card-content {
-  padding: 1.5rem;
-}
-
-.card-doctrine-tag {
-  display: inline-block;
-  background: var(--color-bg-alt);
-  color: var(--color-text-light);
-  padding: 4px 8px;
-  border-radius: var(--border-radius);
-  font-size: var(--font-size-xs);
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-
-.card-title {
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--color-text);
-}
-
-.card-excerpt {
-  color: var(--color-text-light);
-  font-size: var(--font-size-base);
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* Адаптивные media query для карточек материалов */
-@media (min-width: 768px) {
-  .card {
-    transition: var(--transition);
-  }
-  
-  .card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-  }
-  
-  .card-title {
-    font-size: 1.25rem;
-  }
-  
-  .card-excerpt {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .card-title {
-    font-size: 1.5rem;
-  }
-  
-  .card-excerpt {
-    font-size: 1.1rem;
-  }
-}
-
-@media (min-width: 1440px) {
-  .card-title {
-    font-size: 1.75rem;
-  }
-  
-  .card-excerpt {
-    font-size: 1.2rem;
-  }
-}
 
 /* =====================
    DOCTRINE TAGS
@@ -1102,24 +979,16 @@ legend {
   background: white;
 }
 
-.foundation__title {
-  margin-bottom: 1.5rem;
-}
 
 .foundation__intro {
   text-align: center;
   margin-bottom: 3rem;
 }
 
-.foundation__materials {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
 
 
 .foundation__more {
+  margin-top: 3rem;
   text-align: center;
 }
 
@@ -1133,22 +1002,7 @@ legend {
   background: var(--color-bg-alt);
 }
 
-.recent-materials__title {
-  text-align: center;
-  margin-bottom: 3rem;
-}
 
-.recent-materials__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-@media (min-width: 768px) {
-  .recent-materials__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
 /* =====================
    TRANSFORMATION SECTION
@@ -1592,25 +1446,6 @@ legend {
   background: var(--color-bg);
 }
 
-.behold-topics__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 500px) {
-  .behold-topics__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .behold-topics__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
 /* =====================
    LIBRARY CONTROLS
@@ -1733,11 +1568,6 @@ legend {
   background: white;
 }
 
-.library-content__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
 
 .library-content__no-results {
   text-align: center;
@@ -2018,19 +1848,38 @@ legend {
   background: white;
 }
 
-.life-topics__title {
+
+
+/* =====================
+   CARDS LIST
+   ===================== */
+.cards-list__title {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
-.life-topics__grid {
+.cards-list__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 500px) {
+  .cards-list__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .cards-list__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Универсальный класс для карточек тем */
-.topic-card {
+.post-card {
   background: white;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-md);
@@ -2039,24 +1888,24 @@ legend {
   border: 1px solid #E9ECEF;
 }
 
-.topic-card:hover {
+.post-card:hover {
   box-shadow: var(--shadow-lg);
   transform: translateY(-4px);
 }
 
-.topic-card__image-wrapper {
+.post-card__image-wrapper {
   position: relative;
   aspect-ratio: 16/9;
   overflow: hidden;
 }
 
-.topic-card__image-wrapper img {
+.post-card__image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.topic-card__format-icon {
+.post-card__format-icon {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -2067,22 +1916,22 @@ legend {
   font-size: 0.875rem;
 }
 
-.topic-card__content {
+.post-card__content {
   padding: 1.5rem;
 }
 
-.topic-card__title {
+.post-card__title {
   color: var(--color-text);
   margin-bottom: 1rem;
 }
 
-.topic-card__description {
+.post-card__description {
   color: var(--color-text-light);
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
-.topic-card__meta {
+.post-card__meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2090,7 +1939,7 @@ legend {
   gap: 1rem;
 }
 
-.topic-card__doctrine {
+.post-card__doctrine {
   display: inline-block;
   background: var(--color-bg-alt);
   color: var(--color-text-light);
@@ -2102,85 +1951,61 @@ legend {
   letter-spacing: 0.5px;
 }
 
-.topic-card__link {
+.post-card__link {
   color: var(--color-primary);
   font-weight: 500;
   text-decoration: none;
   transition: var(--transition);
 }
 
-.topic-card__link:hover {
+.post-card__link:hover {
   color: var(--color-secondary);
   text-decoration: underline;
 }
 
 /* Адаптивные media query для карточек тем */
 @media (min-width: 768px) {
-  .topic-card__content {
+  .post-card__content {
     padding: 2rem;
   }
   
-  .topic-card__title {
+  .post-card__title {
     font-size: 1.25rem;
   }
   
-  .topic-card__description {
+  .post-card__description {
     font-size: 1rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .topic-card__content {
+  .post-card__content {
     padding: 2.5rem;
   }
   
-  .topic-card__title {
+  .post-card__title {
     font-size: 1.5rem;
   }
   
-  .topic-card__description {
+  .post-card__description {
     font-size: 1.1rem;
   }
 }
 
 @media (min-width: 1440px) {
-  .topic-card__content {
+  .post-card__content {
     padding: 3rem;
   }
   
-  .topic-card__title {
+  .post-card__title {
     font-size: 1.75rem;
   }
   
-  .topic-card__description {
+  .post-card__description {
     font-size: 1.2rem;
   }
 }
 
-/* Обратная совместимость - удалить после обновления HTML */
-.life-topic-card {
-  /* Использует универсальный класс .topic-card */
-}
-
-.life-topic-card__icon {
-  /* Использует универсальный класс .topic-card__icon */
-}
-
-.life-topic-card__title {
-  /* Использует универсальный класс .topic-card__title */
-}
-
-.life-topic-card__description {
-  /* Использует универсальный класс .topic-card__description */
-}
-
-.life-topic-card__meta {
-  /* Использует универсальный класс .topic-card__meta */
-}
-
-.life-topic-card__link {
-  /* Использует универсальный класс .topic-card__link */
-}
 
 /* =====================
    WITNESS TOPICS
@@ -2190,41 +2015,8 @@ legend {
   background: white;
 }
 
-.witness-topics__title {
-  text-align: center;
-  margin-bottom: 3rem;
-}
 
-.witness-topics__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
 
-/* Обратная совместимость - удалить после обновления HTML */
-.witness-topic-card {
-  /* Использует универсальный класс .topic-card */
-}
-
-.witness-topic-card__icon {
-  /* Использует универсальный класс .topic-card__icon */
-}
-
-.witness-topic-card__title {
-  /* Использует универсальный класс .topic-card__title */
-}
-
-.witness-topic-card__description {
-  /* Использует универсальный класс .topic-card__description */
-}
-
-.witness-topic-card__meta {
-  /* Использует универсальный класс .topic-card__meta */
-}
-
-.witness-topic-card__link {
-  /* Использует универсальный класс .topic-card__link */
-}
 
 /* =====================
    COURSE INTRODUCTION
@@ -2262,67 +2054,6 @@ legend {
   margin: 0 auto;
 }
 
-.lesson-card {
-  display: flex;
-  gap: 2rem;
-  background: var(--color-bg-alt);
-  padding: 2rem;
-  border-radius: var(--border-radius-lg);
-  margin-bottom: 2rem;
-  transition: var(--transition);
-}
-
-.lesson-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-
-.lesson-card__number {
-  background: var(--color-primary);
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: var(--font-size-lg);
-  flex-shrink: 0;
-}
-
-.lesson-card__content {
-  flex: 1;
-}
-
-.lesson-card__title {
-  color: var(--color-primary);
-  margin-bottom: 1rem;
-}
-
-.lesson-card__description {
-  color: var(--color-text-light);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.lesson-card__meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.lesson-card__duration {
-  color: var(--color-text-muted);
-  font-size: var(--font-size-sm);
-}
-
-.lesson-card__link {
-  display: inline-block;
-}
 
 /* =====================
    INTEGRATED CONTENT
@@ -2464,12 +2195,6 @@ legend {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* Убираем анимацию для foundation карточек */
-.foundation__materials .animate-on-scroll {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Полностью отключаем анимацию для страницы about */
 body:has(.mission) .animate-on-scroll,
 body:has(.philosophy) .animate-on-scroll,
@@ -2517,17 +2242,6 @@ body.about-page .animate-on-scroll {
   padding: 0 16px;
 }
 
-.card-content {
-  padding: 1rem;
-}
-
-.card-content .card-title {
-  font-size: calc(var(--font-size-lg) * 1.2);
-}
-
-.card-content .card-excerpt {
-  font-size: calc(var(--font-size-base));
-}
 
 .foundation__intro {
   font-size: calc(var(--font-size-base) * 1.2);
@@ -2625,17 +2339,6 @@ body.about-page .animate-on-scroll {
   align-items: center;
 }
 
-.foundation__materials {
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 768px) {
-  .foundation__materials {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-
 .transformation__grid {
   grid-template-columns: 1fr;
 }
@@ -2645,14 +2348,6 @@ body.about-page .animate-on-scroll {
   text-align: center;
 }
 
-.lesson-card {
-  flex-direction: column;
-  text-align: center;
-}
-
-.lesson-card__number {
-  align-self: center;
-}
 
 .learning-step {
   flex-direction: column;
@@ -2696,16 +2391,6 @@ body.about-page .animate-on-scroll {
   align-items: center;
 }
 
-@media (min-width: 501px) and (max-width: 768px) {
-  .foundation__materials {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .recent-materials__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 /* Стили для очень маленьких экранов уже включены в базовые мобильные стили */
 
 /* =====================
@@ -2726,10 +2411,6 @@ body.about-page .animate-on-scroll {
   
   .support__actions {
     flex-direction: row;
-  }
-  
-  .behold-topics__grid {
-    grid-template-columns: repeat(2, 1fr);
   }
   
   /* Скрываем мобильную кнопку меню на десктопе */

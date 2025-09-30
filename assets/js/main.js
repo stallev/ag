@@ -163,7 +163,7 @@
 (function() {
   const searchInput = document.querySelector('.library__search');
   const filterButtons = document.querySelectorAll('.library__filter-btn');
-  const cards = document.querySelectorAll('.card');
+  const cards = document.querySelectorAll('.post-card');
   const resultsCounter = document.querySelector('.library__results-count');
   
   if (!searchInput || !filterButtons.length || !cards.length) return;
@@ -175,8 +175,8 @@
     let visibleCount = 0;
     
     cards.forEach(card => {
-      const title = card.querySelector('.card-title');
-      const excerpt = card.querySelector('.card-excerpt');
+      const title = card.querySelector('.post-card__title');
+      const excerpt = card.querySelector('.post-card__description');
       const cardType = card.dataset.type;
       
       let matchesFilter = currentFilter === 'all' || cardType === currentFilter;
@@ -190,11 +190,9 @@
       
       if (matchesFilter && matchesSearch) {
         card.style.display = 'block';
-        card.classList.remove('card--hidden');
         visibleCount++;
       } else {
         card.style.display = 'none';
-        card.classList.add('card--hidden');
       }
     });
     
@@ -309,7 +307,7 @@
   });
   
   // Добавляем эффект hover для карточек
-  document.querySelectorAll('.card, .lesson-card, .life-topic-card, .witness-topic-card').forEach(card => {
+  document.querySelectorAll('.post-card').forEach(card => {
     card.addEventListener('mouseenter', function() {
       this.style.transform = 'translateY(-2px)';
     });
@@ -320,7 +318,7 @@
   });
   
   // Добавляем поддержку клавиатуры для всех интерактивных элементов
-  document.querySelectorAll('.card-link, .lesson-card__link, .life-topic-card__link, .witness-topic-card__link').forEach(link => {
+  document.querySelectorAll('.post-card__link').forEach(link => {
     link.addEventListener('keydown', function(e) {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
