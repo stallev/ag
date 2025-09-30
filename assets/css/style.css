@@ -1567,6 +1567,52 @@ legend {
 }
 
 /* =====================
+   BEHOLD INTRODUCTION
+   ===================== */
+.behold-introduction {
+  padding: var(--section-padding);
+  background: var(--color-bg-alt);
+}
+
+.behold-introduction__content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.behold-introduction__title {
+  margin-bottom: 2rem;
+}
+
+/* =====================
+   BEHOLD TOPICS
+   ===================== */
+.behold-topics {
+  padding: var(--section-padding);
+  background: var(--color-bg);
+}
+
+.behold-topics__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 500px) {
+  .behold-topics__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .behold-topics__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =====================
    LIBRARY CONTROLS
    ===================== */
 .library__results-count {
@@ -2680,6 +2726,10 @@ body.about-page .animate-on-scroll {
   
   .support__actions {
     flex-direction: row;
+  }
+  
+  .behold-topics__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
   
   /* Скрываем мобильную кнопку меню на десктопе */
