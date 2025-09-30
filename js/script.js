@@ -51,7 +51,7 @@
   // Закрытие меню по клику на overlay
   menuOverlay.addEventListener('click', (e) => {
     // Проверяем, что клик не по submenu
-    if (!e.target.closest('.header__submenu') && !e.target.closest('.header__menu-link--submenu')) {
+    if (!e.target.closest('.header__submenu') && !e.target.closest('.header__menu-link--dropdown')) {
       closeMenu();
     }
   });
@@ -60,7 +60,7 @@
   menuLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       // Не закрываем меню при клике на submenu toggle
-      if (!link.classList.contains('header__menu-link--submenu')) {
+      if (!link.classList.contains('header__menu-link--dropdown')) {
         closeMenu();
       }
     });
@@ -105,7 +105,7 @@
   // =====================
   // SUBMENU ФУНКЦИОНАЛЬНОСТЬ
   // =====================
-  const submenuToggles = document.querySelectorAll('.header__menu-link--submenu');
+  const submenuToggles = document.querySelectorAll('.header__menu-link--dropdown');
   const submenus = document.querySelectorAll('.header__submenu');
   
   submenuToggles.forEach((submenuToggle, index) => {
