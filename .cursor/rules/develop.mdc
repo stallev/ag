@@ -236,7 +236,7 @@ alwaysApply: true
             <a href="pages/behold-god/" class="header__submenu-link">Взирая на Бога</a>
           </li>
           <li class="header__submenu-item">
-            <a href="pages/life-before-god/" class="header__submenu-link">Жизнь перед Богом</a>
+            <a href="pages/life-with-god/" class="header__submenu-link">Жизнь перед Богом</a>
           </li>
           <li class="header__submenu-item">
             <a href="pages/witness-in-world/" class="header__submenu-link">Свидетельство в мире</a>
@@ -305,14 +305,14 @@ alwaysApply: true
     <a href="#" class="header__menu-link header__menu-link--dropdown">Изучение</a>
     <ul class="header__submenu">
       <li><a href="behold-god/">Взирая на Бога</a></li>
-      <li><a href="life-before-god/">Жизнь перед Богом</a></li>
+      <li><a href="life-with-god/">Жизнь перед Богом</a></li>
       <li><a href="witness-in-world/">Свидетельство в мире</a></li>
     </ul>
   </li>
   
   <!-- Неправильно - слишком много пунктов первого уровня -->
   <li><a href="behold-god/">Взирая на Бога</a></li>
-  <li><a href="life-before-god/">Жизнь перед Богом</a></li>
+  <li><a href="life-with-god/">Жизнь перед Богом</a></li>
   <li><a href="witness-in-world/">Свидетельство в мире</a></li>
   ```
 

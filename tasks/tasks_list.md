@@ -7,7 +7,7 @@
 - [x] **1.1. Создание структуры каталогов:**
     - [x] Создать корневые каталоги: `/assets`, `/pages`.
     - [x] Создать вложенные каталоги: `/assets/css`, `/assets/js`, `/assets/images`.
-    - [x] Создать каталоги для страниц: `/pages/behold-god`, `/pages/life-before-god`, `/pages/witness-in-world`, `/pages/topics`.
+    - [x] Создать каталоги для страниц: `/pages/behold-god`, `/pages/life-with-god`, `/pages/witness-in-world`, `/pages/topics`.
 - [x] **1.2. Перенос и адаптация ассетов:**
     - [x] Переместить `styles.css` в `assets/css/style.css`.
     - [x] Переместить `script.js` в `assets/js/main.js`.
@@ -27,7 +27,7 @@
 - [x] **2.1. Создание HTML-файлов:**
     - [x] Создать `index.html`.
     - [x] Создать `/pages/about.html` и `/pages/library.html`.
-    - [x] Создать главные страницы хабов: `behold-god/index.html`, `life-before-god/index.html`, `witness-in-world/index.html`.
+    - [x] Создать главные страницы хабов: `behold-god/index.html`, `life-with-god/index.html`, `witness-in-world/index.html`.
     - [x] Создать шаблоны уроков: `behold-god/lesson-holiness.html`, `behold-god/lesson-sovereignty.html`.
     - [x] Создать шаблоны тематических страниц: `topics/suffering.html`, `topics/prayer.html`.
 - [x] **2.2. Верстка главной страницы:**
