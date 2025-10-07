@@ -107,23 +107,36 @@
   <main id="main" class="main" role="main">
     <!-- Hero section -->
     <section class="hero">
+      <div class="hero__background">
+        <div class="hero__overlay"></div>
+      </div>
       <div class="container">
         <div class="hero__content">
-          <blockquote class="quote quote--hero">
-            <p>"Величие Бога низводит нас до праха, а затем поднимает до небес."</p>
-            <cite>— А.У. Тозер, "Познание Святого"</cite>
-          </blockquote>
+          <div class="hero__quote">
+            <blockquote class="quote quote--hero">
+              <p>"Величие Бога низводит нас до праха, а затем поднимает до небес."</p>
+              <cite>— А.У. Тозер, "Познание Святого"</cite>
+            </blockquote>
+          </div>
           
-          <h1 class="hero__title heading-1">Познайте Бога — обретите жизнь</h1>
-          
-          <p class="hero__subtitle">
-            Глубокое изучение атрибутов Бога для преображения сердца. 
-            От фундаментальных истин к практическому применению в повседневной жизни.
-          </p>
-          
-          <div class="hero__actions">
-            <a href="pages/behold-god/index.html" class="btn">Начать изучение</a>
-            <a href="pages/about.html" class="btn btn--secondary">О проекте</a>
+          <div class="hero__main">
+            <h1 class="hero__title heading-1">Познайте Бога — обретите жизнь</h1>
+            
+            <p class="hero__subtitle">
+              Глубокое изучение атрибутов Бога для преображения сердца. 
+              От фундаментальных истин к практическому применению в повседневной жизни.
+            </p>
+            
+            <div class="hero__actions">
+              <a href="pages/behold-god/index.html" class="btn btn--primary btn--large">
+                <span class="material-icons" aria-hidden="true">school</span>
+                Начать изучение
+              </a>
+              <a href="pages/about.html" class="btn btn--outlined btn--large">
+                <span class="material-icons" aria-hidden="true">info</span>
+                О проекте
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -132,11 +145,14 @@
     <!-- Foundation section -->
     <section class="foundation">
       <div class="container">
-        <h2 class="cards-list__title heading-2 heading--center heading--spaced-lg">Начните с основ</h2>
-        <p class="foundation__intro text-large text-large--center text-large--muted text-large--spaced-lg">
-          Всё начинается с того, Кто есть Бог. Наше представление о Боге определяет 
-          то, как мы живем, молимся, страдаем и поклоняемся.
-        </p>
+        <div class="foundation__header">
+          <h2 class="foundation__title heading-2 heading--center">Начните с основ</h2>
+          <p class="foundation__intro text-large text-large--center text-large--muted">
+            Всё начинается с того, Кто есть Бог. Наше представление о Боге определяет 
+            то, как мы живем, молимся, страдаем и поклоняемся.
+          </p>
+          <div class="foundation__divider"></div>
+        </div>
         
         <div class="cards-list__grid">
           <!-- Материал 1: Святость Бога -->
