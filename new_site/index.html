@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Благая весть — Познание Бога</title>
+  <title>Благая весть — Путь к Богу</title>
   <meta name="description" content="Рассказать людям о Боге. Возбудить богоискание, зародить веру, привести к возрождению.">
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
   <!-- Skip link -->
@@ -14,16 +15,19 @@
   <!-- Header -->
   <header class="header">
     <div class="container">
-      <div class="header__content">
-        <div class="header__logo">
-          <h1 class="logo">Познание Бога</h1>
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">Путь к Богу</a>
         </div>
-        <nav class="header__nav">
-          <ul class="nav-menu">
-            <li><a href="#main" class="nav-link">Главная</a></li>
-            <li><a href="#about" class="nav-link">О проекте</a></li>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#main">Главная</a></li>
+            <li><a href="#categories">Выбрать путь</a></li>
+            <li><a href="#about">О проекте</a></li>
+            <li><a href="#resources">Ресурсы</a></li>
           </ul>
         </nav>
+        <button class="menu-toggle material-icons">menu</button>
       </div>
     </div>
   </header>
@@ -38,18 +42,12 @@
           <p class="hero__subtitle">
             Мы рады, что вы здесь. Этот сайт создан, чтобы помочь вам узнать Бога.
           </p>
-          <div class="hero__quote">
-            <blockquote>
-              <p>"А без веры угодить Богу невозможно; ибо надобно, чтобы приходящий к Богу веровал, что Он есть, и ищущим Его воздаёт."</p>
-              <cite>— Евреям 11:6</cite>
-            </blockquote>
-          </div>
         </div>
       </div>
     </section>
 
     <!-- Categories section -->
-    <section class="categories">
+    <section id="categories" class="categories">
       <div class="container">
         <div class="categories__header">
           <h2 class="section-title">Выберите то, что описывает ваше духовное состояние</h2>
@@ -194,6 +192,52 @@
       </div>
     </section>
 
+    <!-- Resources section -->
+    <section id="resources" class="resources">
+      <div class="container">
+        <div class="resources__header">
+          <h2 class="section-title">Дополнительные ресурсы</h2>
+          <p class="section-subtitle">
+            Полезные материалы для изучения Слова Божьего и духовного роста
+          </p>
+        </div>
+        <div class="resources__grid">
+          <article class="resource-card">
+            <div class="resource-card__icon">📚</div>
+            <h3 class="resource-card__title">Библиотека</h3>
+            <p class="resource-card__description">
+              Библия на различных языках, христианская литература, аудиокниги
+            </p>
+            <a href="#" class="resource-card__link btn">Перейти</a>
+          </article>
+          <article class="resource-card">
+            <div class="resource-card__icon">👶</div>
+            <h3 class="resource-card__title">Детский отдел</h3>
+            <p class="resource-card__description">
+              Аудио рассказы, видео уроки, детская литература, развивающие игры
+            </p>
+            <a href="#" class="resource-card__link btn">Перейти</a>
+          </article>
+          <article class="resource-card">
+            <div class="resource-card__icon">📡</div>
+            <h3 class="resource-card__title">Онлайн трансляции</h3>
+            <p class="resource-card__description">
+              Богослужения и проповеди из разных церквей в прямом эфире
+            </p>
+            <a href="#" class="resource-card__link btn">Перейти</a>
+          </article>
+          <article class="resource-card">
+            <div class="resource-card__icon">🙏</div>
+            <h3 class="resource-card__title">Просьба о молитве</h3>
+            <p class="resource-card__description">
+              Поделитесь своими нуждами и получите молитвенную поддержку
+            </p>
+            <a href="#" class="resource-card__link btn">Отправить</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- About section -->
     <section id="about" class="about">
       <div class="container">
@@ -223,7 +267,7 @@
     <div class="container">
       <div class="footer__content">
         <div class="footer__section">
-          <h3 class="footer__title">Познание Бога</h3>
+          <h3 class="footer__title">Путь к Богу</h3>
           <p class="footer__text">
             Помогаем людям узнать Бога таким, каким Он открыл Себя в Священном Писании.
           </p>
@@ -241,7 +285,7 @@
       
       <div class="footer__bottom">
         <p class="footer__copyright">
-          &copy; 2025 Познание Бога. Все права защищены.
+          &copy; 2025 Путь к Богу. Все права защищены.
         </p>
       </div>
     </div>
