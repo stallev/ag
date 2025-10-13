@@ -69,10 +69,10 @@
     <section class="hero">
       <div class="container">
         <div class="hero__content">
-          <div class="category-header__icon">🎤</div>
-          <h1 class="hero__title">Лучшие песни ансамбля "Воскресение"</h1>
+          <div class="category-header__icon">🎻</div>
+          <h1 class="hero__title">Избранные песни ансамбля "Воскресение"</h1>
           <p class="hero__subtitle">
-            Сборник самых популярных и любимых песен христианского ансамбля
+            Сборник самых известных и любимых песен христианского камерного ансамбля
           </p>
         </div>
       </div>
@@ -83,12 +83,12 @@
       <div class="container">
         <div style="max-width: 1200px; margin: 0 auto;">
           <div class="about__content">
-            <h2 class="section-title text-center mb-4">Популярные песни</h2>
+            <h2 class="section-title text-center mb-4">Избранные песни</h2>
             <div class="about__text">
               <p>
-                Здесь собраны самые популярные и любимые песни ансамбля "Воскресение". 
+                Здесь собраны самые известные и любимые песни христианского камерного ансамбля "Воскресение". 
                 Эти произведения затронули сердца тысяч слушателей и стали настоящими 
-                хитами христианской музыки.
+                классическими произведениями христианской музыки.
               </p>
             </div>
 
@@ -118,7 +118,7 @@
                 <a href="https://www.youtube.com/playlist?list=PLIhH19DrCsidXMZcGNe476fUG5ycEMMAl" 
                    target="_blank" rel="noopener noreferrer" class="btn" style="background-color: var(--color-accent);">
                   <span class="material-icons">playlist_play</span>
-                  Открыть полный плейлист на YouTube
+                  Открыть полную коллекцию на YouTube
                 </a>
               </div>
             </div>
@@ -167,32 +167,35 @@
   <script>
     // YouTube videos data and pagination
     (function() {
-      // Mock data for YouTube videos (in real implementation, this would come from YouTube API)
+      // Real data from YouTube playlist API - Best songs of Voskresenie ensemble
       const youtubeVideos = [
-        { id: "video1", title: "Песня о любви Божьей", videoId: "dQw4w9WgXcQ" },
-        { id: "video2", title: "Воскресение Христово", videoId: "dQw4w9WgXcQ" },
-        { id: "video3", title: "Молитва веры", videoId: "dQw4w9WgXcQ" },
-        { id: "video4", title: "Благодарение", videoId: "dQw4w9WgXcQ" },
-        { id: "video5", title: "Путь к Богу", videoId: "dQw4w9WgXcQ" },
-        { id: "video6", title: "Надежда в сердце", videoId: "dQw4w9WgXcQ" },
-        { id: "video7", title: "Слава Богу", videoId: "dQw4w9WgXcQ" },
-        { id: "video8", title: "Иисус - мой Спаситель", videoId: "dQw4w9WgXcQ" },
-        { id: "video9", title: "Дух Святой", videoId: "dQw4w9WgXcQ" },
-        { id: "video10", title: "Церковь Христова", videoId: "dQw4w9WgXcQ" },
-        { id: "video11", title: "Вера и дела", videoId: "dQw4w9WgXcQ" },
-        { id: "video12", title: "Покаяние", videoId: "dQw4w9WgXcQ" },
-        { id: "video13", title: "Крест Христов", videoId: "dQw4w9WgXcQ" },
-        { id: "video14", title: "Воскресение", videoId: "dQw4w9WgXcQ" },
-        { id: "video15", title: "Второе пришествие", videoId: "dQw4w9WgXcQ" },
-        { id: "video16", title: "Вечная жизнь", videoId: "dQw4w9WgXcQ" },
-        { id: "video17", title: "Царство Божье", videoId: "dQw4w9WgXcQ" },
-        { id: "video18", title: "Служение Богу", videoId: "dQw4w9WgXcQ" },
-        { id: "video19", title: "Семья христианская", videoId: "dQw4w9WgXcQ" },
-        { id: "video20", title: "Дети Божьи", videoId: "dQw4w9WgXcQ" },
-        { id: "video21", title: "Любовь к ближнему", videoId: "dQw4w9WgXcQ" },
-        { id: "video22", title: "Прощение", videoId: "dQw4w9WgXcQ" },
-        { id: "video23", title: "Мир Божий", videoId: "dQw4w9WgXcQ" },
-        { id: "video24", title: "Радость в Господе", videoId: "dQw4w9WgXcQ" }
+        { id: "voskresenie1", title: "Я не хочу полуправды", videoId: "qRQyErW7quo" },
+        { id: "voskresenie2", title: "Я иду вдоль берега", videoId: "GTfe97C0nDY" },
+        { id: "voskresenie3", title: "Учись у солнца", videoId: "Dvj8dll8lq4" },
+        { id: "voskresenie4", title: "Ты молодость свою", videoId: "74utZubrD_E" },
+        { id: "voskresenie5", title: "Смотрю на прожитые дни", videoId: "6jwfTnm-tr8" },
+        { id: "voskresenie6", title: "Радуйся мир Музыка", videoId: "rc3UxIKskGI" },
+        { id: "voskresenie7", title: "Недавно открыл я великую тайну", videoId: "-3P-0MfIg-c" },
+        { id: "voskresenie8", title: "К ранам твоим", videoId: "6CmMMm5P04Y" },
+        { id: "voskresenie9", title: "Года проходят незаметно", videoId: "6MTwhSe4roI" },
+        { id: "voskresenie10", title: "Говорят ты обо мне молилась", videoId: "0SEslR_7kJ0" },
+        { id: "voskresenie11", title: "В суровых горах", videoId: "3usmuKZFsMc" },
+        { id: "voskresenie12", title: "1 Скрипичный ансамбль 'Воскресение' Концерт 'Песни для души'", videoId: "zo_mEnH-ubk" },
+        { id: "voskresenie13", title: "2 Скрипичный ансамбль 'Воскресение' Концерт 'Песни для души'", videoId: "QjZZ_yenaZY" },
+        { id: "voskresenie14", title: "3 Скрипичный ансамбль 'Воскресение' Концерт 'Песни для души'", videoId: "xRTaTZVAMkM" },
+        { id: "voskresenie15", title: "4 Скрипичный ансамбль 'Воскресение' Концерт 'Песни для души'", videoId: "aWc_z_bqRxI" },
+        { id: "voskresenie16", title: "5 Скрипичный ансамбль 'Воскресение' Концерт 'Песни для души'", videoId: "hSNbbIFyWn8" },
+        { id: "voskresenie17", title: "6 Скрипичный ансамбль 'Воскресение' Концерт 'Песни для души'", videoId: "6zEzN1FLs_4" },
+        { id: "voskresenie18", title: "7 Скрипичный ансамбль 'Воскресение' Концерт 'Песни для души'", videoId: "4z04JlvOdSI" },
+        { id: "voskresenie19", title: "8 Скрипичный ансамбль 'Воскресение' Концерт 'Песни для души'", videoId: "zD45_6sgVkk" },
+        { id: "voskresenie20", title: "9 Скрипичный ансамбль 'Воскресение' Концерт 'Песни для души'", videoId: "OEXMA1TsyT0" },
+        { id: "voskresenie21", title: "10 Скрипичный ансамбль 'Воскресение' Концерт 'Песни для души'", videoId: "fkrLlIPI8zI" },
+        { id: "voskresenie22", title: "11 Скрипичный ансамбль 'Воскресение' Концерт 'Песни для души'", videoId: "-2J6zh-8FDE" },
+        { id: "voskresenie23", title: "12 Скрипичный ансамбль 'Воскресение' Концерт 'Песни для души'", videoId: "GdVEqk3Xrm4" },
+        { id: "voskresenie24", title: "13 Скрипичный ансамбль 'Воскресение' Концерт 'Песни для души'", videoId: "nbwnJTnBEd8" },
+        { id: "voskresenie25", title: "14 Скрипичный ансамбль 'Воскресение' Концерт 'Песни для души'", videoId: "gnMGPH_ENoA" },
+        { id: "voskresenie26", title: "15 Скрипичный ансамбль 'Воскресение' Концерт 'Песни для души'", videoId: "LwQPE7pSlR4" },
+        { id: "voskresenie27", title: "16 Скрипичный ансамбль 'Воскресение' Концерт 'Песни для души'", videoId: "gZH2YS2Z920" }
       ];
 
       const itemsPerPage = 16;
