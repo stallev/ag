@@ -292,6 +292,64 @@
   }
 
   // ==========================================
+  // МОБИЛЬНОЕ МЕНЮ
+  // ==========================================
+  
+  /**
+   * Инициализация мобильного меню
+   */
+  function initMobileMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener('click', function() {
+        mainNav.classList.toggle('active');
+        
+        // Обновляем ARIA-атрибуты для доступности
+        const isExpanded = mainNav.classList.contains('active');
+        menuToggle.setAttribute('aria-expanded', isExpanded);
+        menuToggle.setAttribute('aria-label', isExpanded ? 'Закрыть меню' : 'Открыть меню');
+        
+        // Меняем иконку
+        menuToggle.textContent = isExpanded ? 'close' : 'menu';
+      });
+      
+      // Закрытие меню при клике на ссылку
+      const menuLinks = mainNav.querySelectorAll('a');
+      menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mainNav.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.setAttribute('aria-label', 'Открыть меню');
+          menuToggle.textContent = 'menu';
+        });
+      });
+      
+      // Закрытие меню при клике вне меню
+      document.addEventListener('click', function(e) {
+        if (!mainNav.contains(e.target) && !menuToggle.contains(e.target)) {
+          mainNav.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.setAttribute('aria-label', 'Открыть меню');
+          menuToggle.textContent = 'menu';
+        }
+      });
+      
+      // Закрытие меню при нажатии Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mainNav.classList.contains('active')) {
+          mainNav.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.setAttribute('aria-label', 'Открыть меню');
+          menuToggle.textContent = 'menu';
+          menuToggle.focus();
+        }
+      });
+    }
+  }
+
+  // ==========================================
   // ИНИЦИАЛИЗАЦИЯ
   // ==========================================
   
@@ -300,6 +358,7 @@
    */
   function init() {
     // Базовый функционал
+    initMobileMenu();
     initCategorySelection();
     initSmoothScroll();
     initScrollAnimations();
